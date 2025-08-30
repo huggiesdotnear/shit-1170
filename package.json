@@ -12,6 +12,7 @@
     "web4_mainnet": "web4-deploy dist huggies.near --nearfs"
   },
   "dependencies": {
+    "fastintear": "^0.2.4",
     "preact": "^10.27.1"
   },
   "devDependencies": {
