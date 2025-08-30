@@ -24,7 +24,10 @@ bun run web4_mainnet
 ```
 
 ### FEATURES
-- 
+- swap
+- seeing onchain holder and lp price info
+- earn shit
+- trade accounts that hold
 
 
 
