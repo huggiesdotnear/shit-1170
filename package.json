@@ -4,9 +4,12 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "rsbuild build",
+    "clean": "rm -rf dist",
+    "build": "npm run clean && rsbuild build",
+    "typecheck": "tsc --noEmit",
     "dev": "rsbuild dev --open",
-    "preview": "rsbuild preview"
+    "preview": "rsbuild preview",
+    "web4_mainnet": "web4-deploy dist huggies.near --nearfs"
   },
   "dependencies": {
     "preact": "^10.27.1"
