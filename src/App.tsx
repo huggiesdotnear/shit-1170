@@ -1,5 +1,9 @@
+// import
 import './css/main.css';
+import './ts/hello.ts';
 
+
+// App
 const App = () => {
   return (
     <div className="content">
