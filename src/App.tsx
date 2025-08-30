@@ -1,6 +1,7 @@
 // import
 import './css/main.css';
 import './ts/hello.ts';
+import './ts/near/near.config.ts';
 
 
 // App
