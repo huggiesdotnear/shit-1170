@@ -1,0 +1,1 @@
+near.config({ networkId: "mainnet" });
