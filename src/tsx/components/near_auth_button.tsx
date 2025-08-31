@@ -1,6 +1,6 @@
 // import
 import type { FunctionalComponent } from 'preact';
-import { useFastIntearAuth } from '../ts/near/near.auth';
+import { useFastIntearAuth } from '../../ts/near/near.auth';
 
 
 // App_NEAR_AUTH_BUTTON

@@ -1,4 +1,4 @@
-import App_NEAR_AUTH_BUTTON from './near_auth_button.tsx';
+import App_NEAR_AUTH_BUTTON from './components/near_auth_button.tsx';
 import shit_white_icon_svg from '../img/shit_icon.svg';
 
 
