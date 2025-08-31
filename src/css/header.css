@@ -41,9 +41,36 @@ header h1 {
     align-items: center;
 }
 
+/* Auth button styling */
+#NEAR_AUTH_BUTTON {
+    background-color: var(--alt_color_two);
+    color: var(--lit_color_one);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    min-width: 80px;
+}
+
+#NEAR_AUTH_BUTTON:hover {
+    /* background-color: var(--alt_color_one); */
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(218, 41, 28, 0.3);
+}
+
+#NEAR_AUTH_BUTTON:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 4px rgba(218, 41, 28, 0.2);
+}
+
 /* Ensure body content doesn't hide behind fixed header */
 body {
-    padding-top: 80px; /* Adjust based on your header height + some margin */
+    padding-top: 80px;
+    /* Adjust based on your header height + some margin */
 }
 
 /* Responsive adjustments */
@@ -52,17 +79,23 @@ body {
         padding: 0.75rem 1rem;
         height: 56px;
     }
-    
+
     header h1 {
         font-size: 1.25rem;
     }
-    
+
     header img {
         height: 28px;
         width: 28px;
     }
-    
+
     body {
         padding-top: 72px;
+    }
+
+    #NEAR_AUTH_BUTTON {
+        padding: 0.4rem 0.75rem;
+        font-size: 0.8rem;
+        min-width: 70px;
     }
 }
