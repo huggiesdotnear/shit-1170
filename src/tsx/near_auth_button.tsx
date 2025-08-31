@@ -8,7 +8,7 @@ const App_NEAR_AUTH_BUTTON: FunctionalComponent = () => {
     const { auth, login, logout } = useFastIntearAuth();
 
     return (
-        <button onClick={auth.loggedIn ? logout : login}>
+        <button id="NEAR_AUTH_BUTTON" onClick={auth.loggedIn ? logout : login}>
             {auth.loggedIn ? `Logout (${auth.accountId})` : 'Login'}
         </button>
     );
