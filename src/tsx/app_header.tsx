@@ -1,4 +1,3 @@
-import App_NEAR_AUTH_BUTTON from './components/near_auth_button.tsx';
 import shit_white_icon_svg from '../img/shit_icon.svg';
 
 
@@ -6,13 +5,8 @@ import shit_white_icon_svg from '../img/shit_icon.svg';
 const App_header = () => {
     return (
       <header>
-        <div className="header-left">
           <img src={shit_white_icon_svg} alt="Huggies Logo"/>
           <h1>HUGGIES</h1>
-        </div>
-        <div className="header-right">
-          <App_NEAR_AUTH_BUTTON/>
-        </div>
       </header>
     );
   };
