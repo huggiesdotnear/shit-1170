@@ -9,7 +9,7 @@
     "typecheck": "tsc --noEmit",
     "dev": "rsbuild dev --open",
     "preview": "rsbuild preview",
-    "web4_mainnet": "web4-deploy dist huggies.near --nearfs"
+    "web4_mainnet": "web4-deploy dist web4.huggies.near --nearfs"
   },
   "dependencies": {
     "fastintear": "^0.2.4",
