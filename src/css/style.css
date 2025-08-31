@@ -2,18 +2,18 @@
 
 :root {
   
-    --bg-color-one: #ffffff;
-    --bg-color-two: #FFE8E6;
-    --text-color-one: #474747;
-    --alt-color-one: #DA291C;
-    --alt-color-two: #00C6D7;
+    --lit_color_one: #ffffff;
+    --lit_color_two: #FFE8E6;
+    --drk_color_one: #474747;
+    --alt_color_one: #DA291C;
+    --alt_color_two: #00C6D7;
   
   }
   
-  /* body bg will be primarly white  */
+
   body {
-    background-color: var(--bg-color-one);
-    color: var(--text-color-one);
+    background-color: var(--alt_color_one);
+    color: var(--lit_color_one);
     text-align: center;
   }
   
