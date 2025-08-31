@@ -2,5 +2,15 @@ nav {
     z-index: 99;
     position: fixed;
     bottom: 0px;
+    left: 0px;
+    right: 0px;
+    background-color: white;
 
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--alt_color_two);
+    margin-left: 20px;
+    margin-right: 20px;
 }
