@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'preact/hooks';
-import { HUGGIES_SLOGANS } from '../slogans';
+import { HUGGIES_SLOGANS } from './slogans';
 
 export const useRandomSlogan = () => {
     const [slogan, setSlogan] = useState<string>('');

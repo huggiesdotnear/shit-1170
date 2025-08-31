@@ -1,5 +1,5 @@
 import type { FunctionalComponent } from 'preact';
-import { useRandomSlogan } from '../ts/hooks/useRandomSlogan';
+import { useRandomSlogan } from '../ts/useRandomSlogan';
 
 // App_section_loading.tsx
 const App_section_loading: FunctionalComponent<{ path?: string }> = () => {
