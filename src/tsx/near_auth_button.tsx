@@ -9,7 +9,7 @@ const App_NEAR_AUTH_BUTTON: FunctionalComponent = () => {
 
     return (
         <button id="NEAR_AUTH_BUTTON" onClick={auth.loggedIn ? logout : login}>
-            {auth.loggedIn ? `Logout (${auth.accountId})` : 'Login'}
+            {auth.loggedIn ? `LOGOUT (${auth.accountId})` : 'LOGIN'}
         </button>
     );
 };
