@@ -1,13 +1,13 @@
-
+// import
+import { ROUTES } from '../ts/routes';
 
 // App_nav
 const App_nav = () => {
 
-
   return (
     <nav>
-      <a href="/swap">SWAP</a>
-      <a href="/info">INFO</a>
+      <a href={ROUTES.home.path}>{ROUTES.swap.label}</a>
+      <a href={ROUTES.info.path}>{ROUTES.info.label}</a>
     </nav>
   );
 };
