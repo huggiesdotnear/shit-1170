@@ -3,7 +3,7 @@
 // App_section_info.tsx
 const App_section_info_holders = () => {
     return (
-        <div>
+        <div className="info_holders">
             <h1>on chain info COMING SOON</h1>
         </div>
     );
