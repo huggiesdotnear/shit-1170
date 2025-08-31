@@ -67,11 +67,7 @@ header h1 {
     box-shadow: 0 1px 4px rgba(218, 41, 28, 0.2);
 }
 
-/* Ensure body content doesn't hide behind fixed header */
-body {
-    padding-top: 80px;
-    /* Adjust based on your header height + some margin */
-}
+
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
@@ -88,10 +84,6 @@ body {
     header img {
         height: 28px;
         width: 28px;
-    }
-
-    body {
-        padding-top: 72px;
     }
 
     #NEAR_AUTH_BUTTON {
