@@ -15,5 +15,5 @@ dist/
 !.vscode/extensions.json
 .idea
 bun.lock
-fastintear-llm-context.md
+# fastintear-llm-context.md
 package-lock.json
