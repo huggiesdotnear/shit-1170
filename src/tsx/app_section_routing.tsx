@@ -3,7 +3,8 @@ import type { FunctionalComponent } from 'preact';
 import { Router, route } from 'preact-router';
 import { useEffect } from 'preact/hooks';
 
-// app sections 
+// app sections
+import { ROUTES } from '../ts/routes';
 import App_section_loading from './section_loading';
 import App_section_swap from './section_swap';
 import App_section_info from './section_info';
@@ -24,9 +25,9 @@ const App_section_route: FunctionalComponent = () => {
 
     return (
         <Router>
-            <App_section_loading path="/" />
-            <App_section_swap path="/swap" />
-            <App_section_info path="/info" />
+            <App_section_loading path={ROUTES.home.path} />
+            <App_section_swap path={ROUTES.swap.path} />
+            <App_section_info path={ROUTES.info.path} />
         </Router>
     );
 };
