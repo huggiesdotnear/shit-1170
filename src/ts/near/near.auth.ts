@@ -11,8 +11,12 @@ export function useFastIntearAuth(): {
   const [auth, setAuth] = useState<AuthState>({ loggedIn: false });
 
   useEffect(() => {
-    if (near.authStatus() === 'SignedIn') {
+    const status = near.authStatus();
+    console.log('[FastINTEAR] Auth status on mount:', status);
+
+    if (status === 'SignedIn') {
       const accountId = near.accountId();
+      console.log('[FastINTEAR] Detected signed-in account:', accountId);
       if (accountId) {
         setAuth({ loggedIn: true, accountId });
       }
@@ -20,16 +24,20 @@ export function useFastIntearAuth(): {
   }, []);
 
   const login = async () => {
-    await near.requestSignIn({ contractId: 'example.near' }); // Replace with your actual contract
+    console.log('[FastINTEAR] Initiating login...');
+    await near.requestSignIn();
     const accountId = near.accountId();
+    console.log('[FastINTEAR] Login complete. Account ID:', accountId);
     if (accountId) {
       setAuth({ loggedIn: true, accountId });
     }
   };
 
   const logout = () => {
+    console.log('[FastINTEAR] Logging out...');
     near.signOut();
     setAuth({ loggedIn: false });
+    console.log('[FastINTEAR] Logged out.');
   };
 
   return { auth, login, logout };
