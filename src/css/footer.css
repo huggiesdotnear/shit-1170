@@ -17,7 +17,7 @@ footer nav {
     /* margin: 10px; */
 }
 
-footer nav a {
+footer nav a, .section_huggies a {
     text-decoration: none;
     color: var(--lit_color_one);
     font-family: "Lilita One", sans-serif;
@@ -32,7 +32,7 @@ footer nav a {
     text-transform: uppercase;
 }
 
-footer nav a:hover {
+footer nav a:hover, .section_huggies a:hover {
     background-color: var(--alt_color_two);
     color: var(--drk_color_one);
     transform: translateY(-2px);
