@@ -20,6 +20,7 @@ const App_footer = () => {
   return (
     <footer>
       <img src={shit_white_icon_svg} alt="Shit Icon" className="footer-icon" />
+      {/* <h6>HUGGIES</h6> */}
       <nav>
         <a href={ROUTES.swap.path} onClick={(e) => handleNavigation(e, ROUTES.swap.path)}>
           {ROUTES.swap.label}
