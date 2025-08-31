@@ -14,7 +14,6 @@
   body {
     background-color: var(--alt_color_one);
     color: var(--lit_color_one);
-    text-align: center;
   }
   
   
@@ -30,4 +29,13 @@
   
   h1, h2, h3, h4, h5, h6 {
     font-family: "Lilita One", sans-serif;
+  }
+
+
+  /* alignment  */
+
+  body {
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
   }
