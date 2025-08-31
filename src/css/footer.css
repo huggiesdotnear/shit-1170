@@ -1,5 +1,10 @@
 footer {
-    font-size: 20px;
+    /* font-size: 20px; */
     padding: 10px;
     padding-top: 20px;
+}
+
+footer p {
+    font-size: 5px;
+    margin-top: 20px;
 }
