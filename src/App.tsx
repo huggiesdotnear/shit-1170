@@ -3,14 +3,14 @@ import './css/main.css';
 import './ts/hello.ts';
 import './ts/near/near.config.ts';
 // app ui
-import App_NEAR_AUTH_BUTTON from './tsx/near_auth_button.tsx';
+import App_header from './tsx/app_header.tsx';
 
 
 // App
 const App = () => {
   return (
     <article>
-      <App_NEAR_AUTH_BUTTON/>
+      <App_header/>
     </article>
   );
 };
