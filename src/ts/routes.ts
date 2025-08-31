@@ -2,7 +2,7 @@
 export const ROUTES = {
     home: { path: '/', label: 'HOME' },
     swap: { path: '/swap', label: 'SWAP' },
-    info: { path: '/info', label: 'ON CHAIN INFO' },
+    info: { path: '/info', label: 'ONCHAIN' },
     huggies: { path: '/huggies', label: 'HUGGIES' },
   } as const;
   
