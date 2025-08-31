@@ -1,6 +1,6 @@
 import { HUGGIES_SLOGANS } from '../ts/slogans';
 
-// App_header
+// App_section_loading
 const App_section_loading = () => {
     return (
         <section>
