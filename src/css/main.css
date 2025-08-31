@@ -1,0 +1,10 @@
+/* main.css  */
+/* import other css here */
+
+
+
+/* GOOGLE FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+
+/* main  */
+@import url(./style.css);

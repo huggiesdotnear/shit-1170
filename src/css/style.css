@@ -1,0 +1,32 @@
+/* huggies css */
+
+:root {
+  
+    --bg-color-one: #ffffff;
+    --bg-color-two: #FFE8E6;
+    --text-color-one: #474747;
+    --alt-color-one: #DA291C;
+    --alt-color-two: #00C6D7;
+  
+  }
+  
+  /* body bg will be primarly white  */
+  body {
+    background-color: var(--bg-color-one);
+    color: var(--text-color-one);
+  }
+  
+  
+  
+  
+  
+  /* FONT */
+  
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Lilita One", sans-serif;
+  }
