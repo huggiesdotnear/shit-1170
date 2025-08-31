@@ -6,7 +6,7 @@ const App_nav = () => {
 
   return (
     <nav>
-      <a href={ROUTES.home.path}>{ROUTES.swap.label}</a>
+      <a href={ROUTES.swap.path}>{ROUTES.swap.label}</a>
       <a href={ROUTES.info.path}>{ROUTES.info.label}</a>
     </nav>
   );
