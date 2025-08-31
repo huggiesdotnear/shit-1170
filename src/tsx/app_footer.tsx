@@ -28,6 +28,9 @@ const App_footer = () => {
         <a href={ROUTES.info.path} onClick={(e) => handleNavigation(e, ROUTES.info.path)}>
           {ROUTES.info.label}
         </a>
+        <a href={ROUTES.huggies.path} onClick={(e) => handleNavigation(e, ROUTES.huggies.path)}>
+          {ROUTES.huggies.label}
+        </a>
       </nav>
       <p>COPYRIGHT 2025 BY SLEET.NEAR</p>
     </footer>
