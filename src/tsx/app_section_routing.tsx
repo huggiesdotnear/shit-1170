@@ -8,6 +8,7 @@ import { ROUTES } from '../ts/routes';
 import App_section_loading from './section_loading';
 import App_section_swap from './section_swap';
 import App_section_info from './section_info';
+import App_section_huggies from './section_huggies';
 
 // App_section_route.tsx
 const App_section_route: FunctionalComponent = () => {
@@ -28,6 +29,7 @@ const App_section_route: FunctionalComponent = () => {
             <App_section_loading path={ROUTES.home.path} />
             <App_section_swap path={ROUTES.swap.path} />
             <App_section_info path={ROUTES.info.path} />
+            <App_section_huggies path={ROUTES.huggies.path} />
         </Router>
     );
 };
