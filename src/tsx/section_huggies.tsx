@@ -14,6 +14,7 @@ const App_section_huggies: FunctionalComponent<{ path?: string }> = () => {
       <p>{slogan}</p>
       <a href={ROUTES.swap.path}>{ROUTES.swap.label}</a>
       <a href={ROUTES.info.path}>{ROUTES.info.label}</a>
+      <p className="fotter">COPYRIGHT 2025 BY SLEET.NEAR</p>
     </section>
   );
 };
