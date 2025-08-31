@@ -10,21 +10,25 @@ import App_section_info from './section_info';
 
 // App_section_route.tsx
 const App_section_route: FunctionalComponent = () => {
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      route('/swap');
-    }, 3000); // 3 seconds
 
-    return () => clearTimeout(timer);
-  }, []);
+    useEffect(() => {
+        // Only redirect if we're on the root path
+        if (window.location.pathname === '/') {
+            const timer = setTimeout(() => {
+                route('/swap');
+            }, 1000); // 1 seconds
 
-  return (
-    <Router>
-      <App_section_loading path="/" />
-      <App_section_swap path="/swap" />
-      <App_section_info path="/info" />
-    </Router>
-  );
+            return () => clearTimeout(timer);
+        }
+    }, []);
+
+    return (
+        <Router>
+            <App_section_loading path="/" />
+            <App_section_swap path="/swap" />
+            <App_section_info path="/info" />
+        </Router>
+    );
 };
 
 export default App_section_route;
