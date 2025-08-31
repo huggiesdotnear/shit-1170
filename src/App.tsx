@@ -2,15 +2,16 @@
 import './css/main.css';
 import './ts/hello.ts';
 import './ts/near/near.config.ts';
+// app ui
+import App_NEAR_AUTH_BUTTON from './tsx/near_auth_button.tsx';
 
 
 // App
 const App = () => {
   return (
-    <div className="content">
-      <h1>Rsbuild with Preact</h1>
-      <p>Start building amazing things with Rsbuild.</p>
-    </div>
+    <article>
+      <App_NEAR_AUTH_BUTTON/>
+    </article>
   );
 };
 
