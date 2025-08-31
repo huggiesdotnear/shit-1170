@@ -1,7 +1,7 @@
 
 
-// App_section_swap
-const App_section_swap = () => {
+// App_section_route
+const App_section_route = () => {
     return (
         <section>
             <h1>Routing COMING SOON</h1>
@@ -9,4 +9,4 @@ const App_section_swap = () => {
     );
   };
   
-  export default App_section_swap;
+  export default App_section_route;
