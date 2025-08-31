@@ -1,5 +1,5 @@
 import App_NEAR_AUTH_BUTTON from './near_auth_button.tsx';
-import shit_white_icon_png from '../img/shit_white_icon.png';
+import shit_white_icon_png from '../img/shit_icon.svg';
 
 
 // App_header
