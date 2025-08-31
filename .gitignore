@@ -16,3 +16,4 @@ dist/
 .idea
 bun.lock
 fastintear-llm-context.md
+package-lock.json
