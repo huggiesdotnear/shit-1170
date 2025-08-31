@@ -82,6 +82,7 @@ body {
 
     header h1 {
         font-size: 1.25rem;
+        display: none;
     }
 
     header img {
