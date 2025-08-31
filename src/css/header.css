@@ -1,0 +1,68 @@
+/* Fixed header styles */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    /* background-color: #ffffff; */
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    box-sizing: border-box;
+}
+
+/* Left side - Logo and text */
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+header img {
+    height: 32px;
+    width: 32px;
+    object-fit: contain;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    /* color: #333; */
+}
+
+/* Right side - Auth button */
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+/* Ensure body content doesn't hide behind fixed header */
+body {
+    padding-top: 80px; /* Adjust based on your header height + some margin */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    header {
+        padding: 0.75rem 1rem;
+        height: 56px;
+    }
+    
+    header h1 {
+        font-size: 1.25rem;
+    }
+    
+    header img {
+        height: 28px;
+        width: 28px;
+    }
+    
+    body {
+        padding-top: 72px;
+    }
+}
