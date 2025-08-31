@@ -1,16 +1,35 @@
-nav {
+/* nav {
     z-index: 99;
     position: fixed;
     bottom: 0px;
     left: 0px;
     right: 0px;
-    background-color: white;
-
-}
+    background-color: var(--drk_color_one);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    border-top: 2px solid var(--alt_color_two);
+} */
 
 nav a {
     text-decoration: none;
-    color: var(--alt_color_two);
+    color: var(--lit_color_one);
+    font-family: "Lilita One", sans-serif;
+    font-size: 1.2rem;
+    padding: 0.75rem 1.5rem;
     margin-left: 20px;
     margin-right: 20px;
+    border: 2px solid var(--alt_color_two);
+    border-radius: 8px;
+    background-color: transparent;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+nav a:hover {
+    background-color: var(--alt_color_two);
+    color: var(--drk_color_one);
+    transform: translateY(-2px);
 }
