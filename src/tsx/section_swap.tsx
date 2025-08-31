@@ -1,12 +1,12 @@
+import type { FunctionalComponent } from 'preact';
 
+// App_section_swap.tsx
+const App_section_swap: FunctionalComponent<{ path?: string }> = () => {
+  return (
+    <section>
+      <h1>SWAP COMING SOON</h1>
+    </section>
+  );
+};
 
-// App_section_swap
-const App_section_swap = () => {
-    return (
-        <section>
-            <h1>SWAP COMING SOON</h1>
-        </section>
-    );
-  };
-  
-  export default App_section_swap;
+export default App_section_swap;

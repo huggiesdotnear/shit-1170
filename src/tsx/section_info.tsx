@@ -1,7 +1,7 @@
+import type { FunctionalComponent } from 'preact';
 
-
-// App_section_info
-const App_section_info = () => {
+// App_section_info.tsx
+const App_section_info: FunctionalComponent<{ path?: string }> = () => {
     return (
         <section>
             <h1>on chain info COMING SOON</h1>
