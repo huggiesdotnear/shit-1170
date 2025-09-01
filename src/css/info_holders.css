@@ -1,16 +1,16 @@
-.info_holders {
+/* .info_holders {
   padding: 20px;
   max-width: 800px;
   margin: 0 auto;
   font-size: 16px;
-}
+} */
 
-.info_holders h5 {
+/* .info_holders h5 {
   color: var(--drk_color_one);
   font-size: 24px;
   margin-bottom: 20px;
   text-align: center;
-}
+} */
 
 .filter-buttons {
   display: flex;
@@ -82,11 +82,11 @@
   border-radius: 12px;
   padding: 15px 20px;
   margin-bottom: 10px;
-  display: flex;
+  display: inline-flex;
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  width: 100%;
+  width: 90%;
   box-sizing: border-box;
 }
 
