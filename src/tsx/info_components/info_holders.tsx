@@ -64,17 +64,15 @@ const App_section_info_holders = () => {
             <h5>holders ({holders.length})</h5>
             <div className="holders-list">
                 {holders.map((holder, index) => (
-                    <div 
-                        key={holder.account_id} 
-                        className={`holder-item ${holder.type}`}
-                        style={{ borderLeft: `3px solid ${getTypeColor(holder.type)}` }}
-                    >
-                        <div className="holder-rank">#{index + 1}</div>
-                        <span className="type-icon">{getTypeIcon(holder.type)}</span>
-                        <span className="account-id">{holder.account_id}</span>
-                        <div className="holder-stats">
+                    <div className={`holder-item ${holder.type}`}>
+                        <div className="holder-left">
+                            <span className="holder-rank">#{index + 1}</span>
+                            <span className="type-icon">{getTypeIcon(holder.type)}</span>
+                            <span className="account-id">{holder.account_id}</span>
+                        </div>
+                        <div className="holder-right">
                             <span className="holder-balance">{holder.balanceFormatted}</span>
-                            <span className="holder-percentage">({holder.percentage})</span>
+                            <span className="holder-percentage">{holder.percentage}</span>
                         </div>
                     </div>
                 ))}

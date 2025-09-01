@@ -1,93 +1,126 @@
 .info_holders {
-  padding: 1rem;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 8px;
-  margin: 1rem 0;
+  padding: 20px;
+  font-size: 16px;
 }
 
 .info_holders h5 {
-  margin: 0 0 1rem 0;
-  color: #fff;
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  color: white;
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 .holders-list {
-  max-height: 400px;
+  max-height: 500px;
   overflow-y: auto;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
 }
-
-.holders-list::-webkit-scrollbar { width: 6px; }
-.holders-list::-webkit-scrollbar-track { background: transparent; }
-.holders-list::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.3); border-radius: 3px; }
 
 .holder-item {
+  background: white;
+  border-radius: 12px;
+  padding: 15px 20px;
+  margin-bottom: 10px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 0.4rem 0.6rem;
-  margin-bottom: 0.2rem;
-  background: rgba(255, 255, 255, 0.03);
-  border-radius: 4px;
-  transition: all 0.2s ease;
-  font-size: 0.8rem;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-.holder-item:hover {
-  background: rgba(255, 255, 255, 0.08);
+.holder-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
 }
 
 .holder-rank {
+  color: #DA291C;
   font-weight: bold;
-  color: #ffd700;
+  font-size: 14px;
   min-width: 30px;
-  margin-right: 0.5rem;
 }
 
 .type-icon {
-  margin-right: 0.4rem;
-  font-size: 0.9rem;
+  font-size: 18px;
 }
 
 .account-id {
-  color: #fff;
+  color: #333;
   font-weight: 500;
-  flex: 1;
+  font-size: 14px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  margin-right: 1rem;
 }
 
-.holder-stats {
+.holder-right {
   display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  white-space: nowrap;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
 }
 
 .holder-balance {
   color: #4CAF50;
   font-weight: bold;
+  font-size: 16px;
 }
 
 .holder-percentage {
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 0.75rem;
+  color: #666;
+  font-size: 12px;
 }
 
-.holder-item.dev { border-left-color: #4CAF50 !important; }
-.holder-item.dex { border-left-color: #2196F3 !important; }
-.holder-item.nft { border-left-color: #FF9800 !important; }
-.holder-item.regular { border-left-color: #757575 !important; }
+.holder-item.dev {
+  border-left: 4px solid #4CAF50;
+}
+
+.holder-item.dex {
+  border-left: 4px solid #2196F3;
+}
+
+.holder-item.nft {
+  border-left: 4px solid #FF9800;
+}
+
+.holder-item.regular {
+  border-left: 4px solid #999;
+}
 
 .loading, .error {
+  color: white;
   text-align: center;
-  padding: 1.5rem;
-  color: #fff;
+  padding: 40px;
+  font-size: 16px;
 }
 
-.error { color: #f44336; }
+.error {
+  color: #f44336;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .holder-item {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  
+  .holder-left {
+    justify-content: flex-start;
+  }
+  
+  .holder-right {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .account-id {
+    font-size: 13px;
+  }
+  
+  .holder-balance {
+    font-size: 15px;
+  }
+}
