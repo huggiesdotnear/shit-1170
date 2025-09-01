@@ -51,7 +51,14 @@ const getTokenSymbol = (tokenId: string): string => {
 const fetchTokenPrice = async (tokenId: string): Promise<number> => {
     try {
         console.log(`💰 Fetching price for ${tokenId}`);
-        const response = await fetch(`https://prices.intear.tech/price?token_id=${tokenId}`);
+        const response = await fetch(`https://prices.intear.tech/price?token_id=${tokenId}`, {
+            cache: 'no-cache',
+            headers: {
+                'Cache-Control': 'no-cache, no-store, must-revalidate',
+                'Pragma': 'no-cache',
+                'Expires': '0'
+            }
+        });
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }

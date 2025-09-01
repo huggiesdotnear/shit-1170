@@ -30,10 +30,17 @@ const App_section_info_lp = () => {
     }, []);
 
     const formatPrice = (price: number): string => {
-        if (price === 0) return '0.000000';
-        if (price < 0.000001) return price.toFixed(8);
-        if (price < 0.01) return price.toFixed(6);
-        return price.toFixed(4);
+        if (price === 0) return '0.000000000000';
+        if (price < 0.000000001) return price.toFixed(12);
+        if (price < 0.000001) return price.toFixed(10);
+        if (price < 0.01) return price.toFixed(8);
+        return price.toFixed(6);
+    };
+
+    const formatDirectShitPrice = (price: number): string => {
+        if (price === 0) return '0.000000000000';
+        // For direct SHIT price, show full precision without rounding
+        return price.toString();
     };
 
     const formatTokenAmount = (amount: number): string => {
@@ -84,7 +91,7 @@ const App_section_info_lp = () => {
                 </div>
                 <div className="lp-stat">
                     <h3>SHIT Price</h3>
-                    <div className="stat-value">${formatPrice(shitPrice)}</div>
+                    <div className="stat-value">${formatDirectShitPrice(shitPrice)}</div>
                 </div>
             </div>
 
