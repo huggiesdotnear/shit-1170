@@ -8,7 +8,7 @@
 
 
 .lp-header {
-  display: flex;
+  display: inline-flex;
   justify-content: space-around;
   margin-bottom: 30px;
   background: rgba(255, 255, 255, 0.1);
@@ -36,6 +36,10 @@
 
 .price-section, .pools-section {
   margin-bottom: 30px;
+  align-self: center;
+  display: inline-block;
+  /* width: 100%; */
+  border: 3px solid rebeccapurple;
 }
 
 .price-section h3, .pools-section h3 {
@@ -60,7 +64,7 @@
   text-align: center;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   /* display: inline-block; */
-  align-self: center;
+  /* align-self: center; */
 }
 
 .pair-name {
