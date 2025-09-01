@@ -19,7 +19,7 @@ export const POOLS = {
   };
   
   export const TOKEN_DECIMALS = {
-    [TOKENS.SHIT]: 18,
+    [TOKENS.SHIT]: 18, // supply = 1,000,000,000
     [TOKENS.CRANS]: 24,    // CRANS has 24 decimals with 1M total supply
     [TOKENS.SHITZU]: 18,
     [TOKENS.BD]: 24,       // BD has 24 decimals with ~100B total supply
