@@ -17,7 +17,7 @@ const App_section_route: FunctionalComponent = () => {
         // Only redirect if we're on the root path
         if (window.location.pathname === '/') {
             const timer = setTimeout(() => {
-                route('/info');
+                route(ROUTES.info.path);
             }, 1000); // 1 seconds
 
             return () => clearTimeout(timer);
