@@ -1,10 +1,20 @@
-.section_info div {
+.section_info>h3 {
+    /* background-color: white; */
+    /* color: var(--drk_color_one); */
+    border-radius: 5px;
+    margin: 5px;
+    padding: 5px;
+    width: 90%;
+    max-width: 90%;
+}
+
+.section_info .info_holders,
+.section_info .info_lp {
     background-color: white;
     color: var(--drk_color_one);
     border-radius: 5px;
     margin: 5px;
     padding: 5px;
-
     width: 90%;
     max-width: 90%;
 }

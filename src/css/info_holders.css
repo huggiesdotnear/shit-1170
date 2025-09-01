@@ -69,9 +69,6 @@
 .holders-list {
   max-height: 500px;
   overflow-y: auto;
-  /* width: 100% !important; */
-  /* border: 3px solid red; */
-  /* align-self: center; */
   display: inline-block;
   padding: 0px;
 }
@@ -79,7 +76,7 @@
 .holder-item {
   background: white;
   border-radius: 12px;
-  /* padding: 15px 20px; */
+  padding: 15px 20px;
   margin-bottom: 10px;
   display: inline-flex;
   justify-content: space-between;
