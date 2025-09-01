@@ -61,7 +61,7 @@ const App_section_info_holders = () => {
 
     return (
         <div className="info_holders">
-            <h5>holders ({holders.length})</h5>
+            <h5>holders</h5>
             <div className="holders-list">
                 {holders.map((holder, index) => (
                     <div className={`holder-item ${holder.type}`}>

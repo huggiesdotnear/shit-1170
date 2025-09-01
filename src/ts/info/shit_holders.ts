@@ -20,7 +20,7 @@ export interface ProcessedHolder extends HolderAccount {
 // Known accounts mapping
 const KNOWN_ACCOUNTS: Record<string, 'dev' | 'dex' | 'nft'> = {
     'sleet.near': 'dev',
-    'hugges.near': 'dev',
+    'huggies.near': 'dev',
     'v2.ref-finance.near': 'dex',
     'notdone.near': 'nft',
     'outwit.near': 'nft',
@@ -62,28 +62,56 @@ const calculatePercentage = (balance: string): string => {
 
 // Process holders data
 const processHolders = (holders: HolderAccount[]): ProcessedHolder[] => {
-    return holders.map(holder => {
+    console.log('🔧 Processing holders data...');
+
+    return holders.map((holder, index) => {
         const knownType = KNOWN_ACCOUNTS[holder.account_id];
-        return {
+        const processed = {
             ...holder,
             type: knownType || 'regular',
             balanceFormatted: formatBalance(holder.balance),
             percentage: calculatePercentage(holder.balance)
         };
+
+        // Log first 5 and any known accounts
+        if (index < 5 || knownType) {
+            console.log(`📋 #${index + 1} ${holder.account_id}:`, {
+                type: processed.type,
+                balance: processed.balanceFormatted,
+                percentage: processed.percentage,
+                rawBalance: holder.balance
+            });
+        }
+
+        return processed;
     });
 };
 
 // Fetch holders data
 export const fetchHolders = async (): Promise<ProcessedHolder[]> => {
     try {
+        console.log('🔄 Fetching holders data...');
         const response = await fetch('https://api.fastnear.com/v1/ft/shit-1170.meme-cooking.near/top');
+
         if (!response.ok) {
+            console.error('❌ HTTP error:', response.status, response.statusText);
             throw new Error(`HTTP error! status: ${response.status}`);
         }
+
         const data: HoldersResponse = await response.json();
-        return processHolders(data.accounts);
+        console.log('📊 Raw holders data:', data);
+        console.log(`📈 Total holders received: ${data.accounts.length}`);
+
+        const processedHolders = processHolders(data.accounts);
+        console.log('✅ Processed holders:', processedHolders);
+
+        // Log known accounts found
+        const knownAccounts = processedHolders.filter(h => h.type !== 'regular');
+        console.log(`🎯 Known accounts found: ${knownAccounts.length}`, knownAccounts.map(h => `${h.account_id} (${h.type})`));
+
+        return processedHolders;
     } catch (error) {
-        console.error('Error fetching holders:', error);
+        console.error('💥 Error fetching holders:', error);
         throw error;
     }
 };

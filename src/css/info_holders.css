@@ -98,29 +98,43 @@
   color: #f44336;
 }
 
-/* Mobile responsive */
+/* Mobile responsive - more compact */
 @media (max-width: 768px) {
+  .info_holders {
+    padding: 15px;
+  }
+  
   .holder-item {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 10px;
+    padding: 10px 15px;
+    margin-bottom: 8px;
   }
   
   .holder-left {
-    justify-content: flex-start;
+    gap: 8px;
   }
   
-  .holder-right {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+  .holder-rank {
+    font-size: 12px;
+    min-width: 25px;
+  }
+  
+  .type-icon {
+    font-size: 16px;
   }
   
   .account-id {
-    font-size: 13px;
+    font-size: 12px;
+  }
+  
+  .holder-right {
+    gap: 1px;
   }
   
   .holder-balance {
-    font-size: 15px;
+    font-size: 14px;
+  }
+  
+  .holder-percentage {
+    font-size: 11px;
   }
 }
