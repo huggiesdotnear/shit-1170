@@ -39,8 +39,12 @@ const App_section_info_lp = () => {
 
     const formatDirectShitPrice = (price: number): string => {
         if (price === 0) return '0.000000000000';
-        // For direct SHIT price, show full precision without rounding
-        return price.toString();
+        // For direct SHIT price, convert scientific notation to decimal with full precision
+        // Use toFixed with enough decimal places to capture the full precision
+        if (price < 0.000000000001) return price.toFixed(15);
+        if (price < 0.000000001) return price.toFixed(12);
+        if (price < 0.000001) return price.toFixed(10);
+        return price.toFixed(8);
     };
 
     const formatTokenAmount = (amount: number): string => {
