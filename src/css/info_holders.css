@@ -85,7 +85,7 @@
   display: inline-flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   width: 90%;
   box-sizing: border-box;
 }
@@ -151,7 +151,8 @@
   border-left: 4px solid #999;
 }
 
-.loading, .error {
+.loading,
+.error {
   color: white;
   text-align: center;
   padding: 40px;
@@ -167,7 +168,7 @@
   .info_holders {
     padding: 15px;
   }
-  
+
   .holder-item {
     padding: 12px;
     margin-bottom: 8px;
@@ -175,32 +176,32 @@
     align-items: stretch !important;
     gap: 8px !important;
   }
-  
+
   .holder-left {
     display: flex !important;
     align-items: center !important;
     gap: 8px !important;
     width: 100% !important;
   }
-  
+
   .holder-rank {
     font-size: 14px !important;
     min-width: 30px !important;
     color: #DA291C !important;
     font-weight: bold !important;
   }
-  
+
   .type-icon {
     font-size: 16px !important;
   }
-  
+
   .account-id {
     font-size: 14px !important;
     color: #333 !important;
     font-weight: 500 !important;
     flex: 1 !important;
   }
-  
+
   .holder-right {
     display: flex !important;
     justify-content: space-between !important;
@@ -209,13 +210,13 @@
     padding-top: 4px !important;
     border-top: 1px solid #eee !important;
   }
-  
+
   .holder-balance {
     font-size: 16px !important;
     color: #4CAF50 !important;
     font-weight: bold !important;
   }
-  
+
   .holder-percentage {
     font-size: 14px !important;
     color: #666 !important;
