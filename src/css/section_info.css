@@ -1,6 +1,7 @@
 .section_info div {
     background-color: white;
     color: var(--drk_color_one);
+    border-radius: 5px;
     margin: 5px;
     padding: 5px;
 

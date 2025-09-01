@@ -59,14 +59,7 @@ const App_section_info_holders = () => {
         }
     };
 
-    const getTypeColor = (type: ProcessedHolder['type']) => {
-        switch (type) {
-            case 'dev': return '#4CAF50';
-            case 'dex': return '#2196F3';
-            case 'nft': return '#FF9800';
-            default: return '#757575';
-        }
-    };
+
 
     if (loading) {
         return (
@@ -89,27 +82,27 @@ const App_section_info_holders = () => {
     return (
         <div className="info_holders">
             <h5>holders</h5>
-            
+
             <div className="filter-buttons">
-                <button 
+                <button
                     className={`filter-btn ${activeFilter === 'all' ? 'active' : ''}`}
                     onClick={() => handleFilterClick('all')}
                 >
                     All
                 </button>
-                <button 
+                <button
                     className={`filter-btn ${activeFilter === 'dev' ? 'active' : ''}`}
                     onClick={() => handleFilterClick('dev')}
                 >
                     👨‍💻
                 </button>
-                <button 
+                <button
                     className={`filter-btn ${activeFilter === 'dex' ? 'active' : ''}`}
                     onClick={() => handleFilterClick('dex')}
                 >
                     🔄
                 </button>
-                <button 
+                <button
                     className={`filter-btn ${activeFilter === 'nft' ? 'active' : ''}`}
                     onClick={() => handleFilterClick('nft')}
                 >
@@ -134,8 +127,8 @@ const App_section_info_holders = () => {
             </div>
 
             <div className="refresh-section">
-                <button 
-                    className="refresh-btn" 
+                <button
+                    className="refresh-btn"
                     onClick={handleRefresh}
                     disabled={refreshing}
                 >
