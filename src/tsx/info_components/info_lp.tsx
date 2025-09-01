@@ -111,7 +111,6 @@ const App_section_info_lp = () => {
                         <div key={pool.pool_id} className="pool-card">
                             <div className="pool-header">
                                 <div className="pool-pair">
-                                    <span className="token-icon">💧</span>
                                     <span>{pool.token0_symbol}/{pool.token1_symbol}</span>
                                 </div>
                                 <div className="pool-id">#{pool.pool_id}</div>
