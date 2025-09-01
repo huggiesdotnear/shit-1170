@@ -111,23 +111,32 @@
   
   .holder-left {
     gap: 8px;
+    min-width: 0;
+    flex: 1;
   }
   
   .holder-rank {
     font-size: 12px;
     min-width: 25px;
+    flex-shrink: 0;
   }
   
   .type-icon {
     font-size: 16px;
+    flex-shrink: 0;
   }
   
   .account-id {
     font-size: 12px;
+    min-width: 0;
+    flex: 1;
+    max-width: 120px;
   }
   
   .holder-right {
     gap: 1px;
+    flex-shrink: 0;
+    min-width: 80px;
   }
   
   .holder-balance {

@@ -2,6 +2,9 @@
 // https://api.fastnear.com/v1/ft/shit-1170.meme-cooking.near/top
 // this returns the top 100 holders
 
+const CACHE_KEY = 'shit_holders_cache';
+const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
+
 export interface HolderAccount {
     account_id: string;
     balance: string;
@@ -15,6 +18,11 @@ export interface ProcessedHolder extends HolderAccount {
     type: 'dev' | 'dex' | 'nft' | 'regular';
     balanceFormatted: string;
     percentage: string;
+}
+
+interface CachedData {
+    holders: ProcessedHolder[];
+    timestamp: number;
 }
 
 // Known accounts mapping
@@ -60,6 +68,46 @@ const calculatePercentage = (balance: string): string => {
     }
 };
 
+// Cache functions
+const getCachedHolders = (): ProcessedHolder[] | null => {
+    try {
+        const cached = localStorage.getItem(CACHE_KEY);
+        if (!cached) {
+            console.log('💾 No cached holders found');
+            return null;
+        }
+
+        const data: CachedData = JSON.parse(cached);
+        const now = Date.now();
+
+        if (now - data.timestamp > CACHE_DURATION) {
+            console.log('⏰ Cached holders expired');
+            localStorage.removeItem(CACHE_KEY);
+            return null;
+        }
+
+        console.log('✅ Using cached holders data');
+        return data.holders;
+    } catch (error) {
+        console.error('❌ Error reading cache:', error);
+        localStorage.removeItem(CACHE_KEY);
+        return null;
+    }
+};
+
+const setCachedHolders = (holders: ProcessedHolder[]): void => {
+    try {
+        const data: CachedData = {
+            holders,
+            timestamp: Date.now()
+        };
+        localStorage.setItem(CACHE_KEY, JSON.stringify(data));
+        console.log('💾 Cached holders data');
+    } catch (error) {
+        console.error('❌ Error caching data:', error);
+    }
+};
+
 // Process holders data
 const processHolders = (holders: HolderAccount[]): ProcessedHolder[] => {
     console.log('🔧 Processing holders data...');
@@ -89,8 +137,14 @@ const processHolders = (holders: HolderAccount[]): ProcessedHolder[] => {
 
 // Fetch holders data
 export const fetchHolders = async (): Promise<ProcessedHolder[]> => {
+    // Check cache first
+    const cachedHolders = getCachedHolders();
+    if (cachedHolders) {
+        return cachedHolders;
+    }
+
     try {
-        console.log('🔄 Fetching holders data...');
+        console.log('🔄 Fetching fresh holders data...');
         const response = await fetch('https://api.fastnear.com/v1/ft/shit-1170.meme-cooking.near/top');
 
         if (!response.ok) {
@@ -108,6 +162,9 @@ export const fetchHolders = async (): Promise<ProcessedHolder[]> => {
         // Log known accounts found
         const knownAccounts = processedHolders.filter(h => h.type !== 'regular');
         console.log(`🎯 Known accounts found: ${knownAccounts.length}`, knownAccounts.map(h => `${h.account_id} (${h.type})`));
+
+        // Cache the results
+        setCachedHolders(processedHolders);
 
         return processedHolders;
     } catch (error) {
