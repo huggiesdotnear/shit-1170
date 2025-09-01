@@ -28,12 +28,23 @@ interface CachedData {
 // Known accounts mapping
 const KNOWN_ACCOUNTS: Record<string, 'dev' | 'dex' | 'nft'> = {
     'sleet.near': 'dev',
+    'sleet_mainnet_test_yes_doxing_myself_sorry_for_rugs.near': 'dev',
     'huggies.near': 'dev',
     'nonresistant.near': 'dev',
+    'nonresistantreally.tg': 'dev',
+    'shitbyhuggies.tipbot.intear.near': 'dev',
     'v2.ref-finance.near': 'dex',
     'veax.near': 'dex',
     'notdone.near': 'nft',
     'outwit.near': 'nft',
+    'fediverse.near': 'nft',
+    'waffel.near': 'nft',
+    'utes.near': 'nft',
+    'powwow.near': 'nft',
+    'nearnexus.near': 'nft',
+    'hodldogshit.near': 'nft',
+    'sofo.near': 'nft',
+    'jeetersnotallowed.near': 'nft',
 };
 
 const TOTAL_SUPPLY = 1_000_000_000; // 1 billion tokens
