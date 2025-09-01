@@ -65,40 +65,18 @@ const fetchTokenPrice = async (tokenId: string): Promise<number> => {
     }
 };
 
-// Fetch pool data from Ref Finance
+// Fetch pool data from Ref Finance using fastintear
 const fetchPoolData = async (poolId: number): Promise<PoolData | null> => {
     try {
         console.log(`🏊 Fetching pool data for pool ${poolId}`);
 
-        // This would normally use NEAR RPC, but for now we'll simulate
-        // In a real implementation, you'd use near.view() here
-        const response = await fetch('https://rpc.mainnet.near.org', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                jsonrpc: '2.0',
-                id: 'dontcare',
-                method: 'query',
-                params: {
-                    request_type: 'call_function',
-                    finality: 'final',
-                    account_id: 'v2.ref-finance.near',
-                    method_name: 'get_pool',
-                    args_base64: btoa(JSON.stringify({ pool_id: poolId }))
-                }
-            })
+        // Use fastintear's near.view() method
+        const result = await (window as any).near.view({
+            contractId: "v2.ref-finance.near",
+            methodName: "get_pool",
+            args: { pool_id: poolId }
         });
 
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
-        const data = await response.json();
-        if (data.error) {
-            throw new Error(data.error.message);
-        }
-
-        const result = JSON.parse(new TextDecoder().decode(new Uint8Array(data.result.result)));
         console.log(`🏊 Pool ${poolId} data:`, result);
         return result;
     } catch (error) {
