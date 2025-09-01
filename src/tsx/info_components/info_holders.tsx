@@ -70,12 +70,11 @@ const App_section_info_holders = () => {
                         style={{ borderLeft: `3px solid ${getTypeColor(holder.type)}` }}
                     >
                         <div className="holder-rank">#{index + 1}</div>
-                        <div className="holder-info">
-                            <div className="holder-name">
-                                <span className="type-icon">{getTypeIcon(holder.type)}</span>
-                                {holder.account_id}
-                            </div>
-                            <div className="holder-balance">{holder.balanceFormatted}</div>
+                        <span className="type-icon">{getTypeIcon(holder.type)}</span>
+                        <span className="account-id">{holder.account_id}</span>
+                        <div className="holder-stats">
+                            <span className="holder-balance">{holder.balanceFormatted}</span>
+                            <span className="holder-percentage">({holder.percentage})</span>
                         </div>
                     </div>
                 ))}

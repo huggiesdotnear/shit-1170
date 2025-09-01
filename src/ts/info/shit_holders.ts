@@ -14,6 +14,7 @@ export interface HoldersResponse {
 export interface ProcessedHolder extends HolderAccount {
     type: 'dev' | 'dex' | 'nft' | 'regular';
     balanceFormatted: string;
+    percentage: string;
 }
 
 // Known accounts mapping
@@ -25,10 +26,12 @@ const KNOWN_ACCOUNTS: Record<string, 'dev' | 'dex' | 'nft'> = {
     'outwit.near': 'nft',
 };
 
+const TOTAL_SUPPLY = 1_000_000_000; // 1 billion tokens
+
 // Format balance from wei-like format to readable number
 const formatBalance = (balance: string): string => {
     const num = BigInt(balance);
-    const divisor = BigInt('1000000000000000000000000'); // 24 decimals
+    const divisor = BigInt('1000000000000000000'); // 18 decimals
     const formatted = Number(num / divisor);
 
     if (formatted >= 1000000000) {
@@ -41,6 +44,22 @@ const formatBalance = (balance: string): string => {
     return formatted.toFixed(2);
 };
 
+// Calculate percentage of total supply
+const calculatePercentage = (balance: string): string => {
+    const num = BigInt(balance);
+    const divisor = BigInt('1000000000000000000'); // 18 decimals
+    const formatted = Number(num / divisor);
+    const percentage = (formatted / TOTAL_SUPPLY) * 100;
+
+    if (percentage >= 0.01) {
+        return `${percentage.toFixed(2)}%`;
+    } else if (percentage >= 0.001) {
+        return `${percentage.toFixed(3)}%`;
+    } else {
+        return '<0.001%';
+    }
+};
+
 // Process holders data
 const processHolders = (holders: HolderAccount[]): ProcessedHolder[] => {
     return holders.map(holder => {
@@ -48,7 +67,8 @@ const processHolders = (holders: HolderAccount[]): ProcessedHolder[] => {
         return {
             ...holder,
             type: knownType || 'regular',
-            balanceFormatted: formatBalance(holder.balance)
+            balanceFormatted: formatBalance(holder.balance),
+            percentage: calculatePercentage(holder.balance)
         };
     });
 };
