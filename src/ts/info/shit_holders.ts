@@ -138,11 +138,15 @@ const processHolders = (holders: HolderAccount[]): ProcessedHolder[] => {
 };
 
 // Fetch holders data
-export const fetchHolders = async (): Promise<ProcessedHolder[]> => {
-    // Check cache first
-    const cachedHolders = getCachedHolders();
-    if (cachedHolders) {
-        return cachedHolders;
+export const fetchHolders = async (forceRefresh = false): Promise<ProcessedHolder[]> => {
+    // Check cache first (unless force refresh)
+    if (!forceRefresh) {
+        const cachedHolders = getCachedHolders();
+        if (cachedHolders) {
+            return cachedHolders;
+        }
+    } else {
+        console.log('🔄 Force refresh requested, skipping cache');
     }
 
     try {
