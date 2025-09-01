@@ -25,6 +25,10 @@ export interface PoolInfo {
     token1: string;
     token0_amount: string;
     token1_amount: string;
+    token0_amount_human: number;
+    token1_amount_human: number;
+    token0_usd_value: number;
+    token1_usd_value: number;
     token0_symbol: string;
     token1_symbol: string;
     tvl_usd: number;
@@ -133,33 +137,11 @@ const calculateShitPrice = (poolData: PoolData, otherTokenPrice: number): number
     return shitPrice;
 };
 
-// Calculate TVL for a pool
-const calculateTVL = (poolData: PoolData, token0Price: number, token1Price: number): number => {
-    const amount0 = BigInt(poolData.amounts[0]);
-    const amount1 = BigInt(poolData.amounts[1]);
 
-    const token0Id = poolData.token_account_ids[0];
-    const token1Id = poolData.token_account_ids[1];
 
-    const decimals0 = TOKEN_DECIMALS[token0Id as keyof typeof TOKEN_DECIMALS] || 24;
-    const decimals1 = TOKEN_DECIMALS[token1Id as keyof typeof TOKEN_DECIMALS] || 24;
-
-    const human0 = Number(amount0) / Math.pow(10, decimals0);
-    const human1 = Number(amount1) / Math.pow(10, decimals1);
-
-    const tvl = (human0 * token0Price) + (human1 * token1Price);
-
-    console.log(`📊 TVL calculation:`, {
-        token0: token0Id,
-        token1: token1Id,
-        amount0: human0,
-        amount1: human1,
-        price0: token0Price,
-        price1: token1Price,
-        tvl
-    });
-
-    return tvl;
+// Fetch SHIT price from intear.tech
+export const fetchShitPrice = async (): Promise<number> => {
+    return await fetchTokenPrice(TOKENS.SHIT);
 };
 
 // Fetch all pool information
@@ -201,8 +183,18 @@ export const fetchAllPoolsInfo = async (): Promise<PoolInfo[]> => {
         const otherTokenPrice = priceMap[otherTokenId] || 0;
         const shitPrice = calculateShitPrice(poolData, otherTokenPrice);
 
+        // Calculate human readable amounts
+        const decimals0 = TOKEN_DECIMALS[token0Id as keyof typeof TOKEN_DECIMALS] || 24;
+        const decimals1 = TOKEN_DECIMALS[token1Id as keyof typeof TOKEN_DECIMALS] || 24;
+        const token0AmountHuman = Number(poolData.amounts[0]) / Math.pow(10, decimals0);
+        const token1AmountHuman = Number(poolData.amounts[1]) / Math.pow(10, decimals1);
+
+        // Calculate USD values for each token
+        const token0UsdValue = token0AmountHuman * (token0Price || shitPrice);
+        const token1UsdValue = token1AmountHuman * (token1Price || shitPrice);
+
         // Calculate TVL
-        const tvl = calculateTVL(poolData, token0Price || shitPrice, token1Price || shitPrice);
+        const tvl = token0UsdValue + token1UsdValue;
 
         poolsInfo.push({
             pool_id: poolId,
@@ -211,6 +203,10 @@ export const fetchAllPoolsInfo = async (): Promise<PoolInfo[]> => {
             token1: token1Id,
             token0_amount: poolData.amounts[0],
             token1_amount: poolData.amounts[1],
+            token0_amount_human: token0AmountHuman,
+            token1_amount_human: token1AmountHuman,
+            token0_usd_value: token0UsdValue,
+            token1_usd_value: token1UsdValue,
             token0_symbol: token0Symbol,
             token1_symbol: token1Symbol,
             tvl_usd: tvl,

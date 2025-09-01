@@ -8,7 +8,7 @@
 
 
 .lp-header {
-  display: inline-flex;
+  display: flex;
   justify-content: space-around;
   margin-bottom: 30px;
   background: rgba(255, 255, 255, 0.1);
@@ -36,9 +36,6 @@
 
 .price-section, .pools-section {
   margin-bottom: 30px;
-  display: inline-block;
-  align-items: center;
-  border: 3px solid red;
 }
 
 .price-section h3, .pools-section h3 {
@@ -53,6 +50,7 @@
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 15px;
   margin-bottom: 20px;
+  justify-items: center;
 }
 
 .price-card {
@@ -82,6 +80,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
+  justify-items: center;
 }
 
 .pool-card {
@@ -92,14 +91,14 @@
 }
 
 .pool-header {
-  display: inline-flex;
+  display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 15px;
 }
 
 .pool-pair {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 8px;
   color: #333;
@@ -120,15 +119,15 @@
 }
 
 .pool-stats {
-  display: inline-flex;
-  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .pool-stat {
-  display: inline-flex;
-  inline-flex-direction: column;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 4px;
 }
 
 .stat-label {
@@ -142,6 +141,36 @@
   color: #333;
   font-weight: bold;
   font-size: 14px;
+}
+
+.token-amounts {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #eee;
+}
+
+.token-amount {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+}
+
+.token-symbol {
+  font-weight: 600;
+  color: #333;
+}
+
+.amount-value {
+  color: #666;
+}
+
+.usd-value {
+  color: #4CAF50;
+  font-weight: 500;
 }
 
 .loading, .error {
@@ -162,7 +191,7 @@
   }
   
   .lp-header {
-    inline-flex-direction: column;
+    flex-direction: column;
     gap: 15px;
   }
   
@@ -175,12 +204,7 @@
   }
   
   .pool-stats {
-    inline-flex-direction: column;
+    flex-direction: column;
     gap: 10px;
-  }
-  
-  .pool-stat {
-    inline-flex-direction: row;
-    justify-content: space-between;
   }
 }

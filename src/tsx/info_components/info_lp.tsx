@@ -1,33 +1,46 @@
 
 
 import { useState, useEffect } from 'react';
-import { fetchAllPoolsInfo, type PoolInfo } from '../../ts/info/shit_lp_price';
+import { fetchAllPoolsInfo, fetchShitPrice, type PoolInfo } from '../../ts/info/shit_lp_price';
 
 const App_section_info_lp = () => {
     const [poolsData, setPoolsData] = useState<PoolInfo[]>([]);
+    const [shitPrice, setShitPrice] = useState<number>(0);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
-        const loadPoolsData = async () => {
+        const loadData = async () => {
             try {
                 setLoading(true);
-                const data = await fetchAllPoolsInfo();
-                setPoolsData(data);
+                const [poolsData, shitPriceData] = await Promise.all([
+                    fetchAllPoolsInfo(),
+                    fetchShitPrice()
+                ]);
+                setPoolsData(poolsData);
+                setShitPrice(shitPriceData);
             } catch (err) {
-                setError(err instanceof Error ? err.message : 'Failed to load pools data');
+                setError(err instanceof Error ? err.message : 'Failed to load data');
             } finally {
                 setLoading(false);
             }
         };
 
-        loadPoolsData();
+        loadData();
     }, []);
 
     const formatPrice = (price: number): string => {
-        if (price < 0.000001) return price.toExponential(3);
+        if (price === 0) return '0.000000';
+        if (price < 0.000001) return price.toFixed(8);
         if (price < 0.01) return price.toFixed(6);
         return price.toFixed(4);
+    };
+
+    const formatTokenAmount = (amount: number): string => {
+        if (amount >= 1000000) return `${(amount / 1000000).toFixed(2)}M`;
+        if (amount >= 1000) return `${(amount / 1000).toFixed(2)}K`;
+        if (amount < 0.01) return amount.toFixed(6);
+        return amount.toFixed(2);
     };
 
     const formatTVL = (tvl: number): string => {
@@ -40,11 +53,7 @@ const App_section_info_lp = () => {
         return poolsData.reduce((sum, pool) => sum + pool.tvl_usd, 0);
     };
 
-    const getAverageShitPrice = (): number => {
-        const validPrices = poolsData.filter(pool => pool.shit_price_usd > 0);
-        if (validPrices.length === 0) return 0;
-        return validPrices.reduce((sum, pool) => sum + pool.shit_price_usd, 0) / validPrices.length;
-    };
+
 
     if (loading) {
         return (
@@ -74,8 +83,8 @@ const App_section_info_lp = () => {
                     <div className="stat-value">{poolsData.length}</div>
                 </div>
                 <div className="lp-stat">
-                    <h3>Avg SHIT Price</h3>
-                    <div className="stat-value">${formatPrice(getAverageShitPrice())}</div>
+                    <h3>SHIT Price</h3>
+                    <div className="stat-value">${formatPrice(shitPrice)}</div>
                 </div>
             </div>
 
@@ -110,11 +119,23 @@ const App_section_info_lp = () => {
                             <div className="pool-stats">
                                 <div className="pool-stat">
                                     <span className="stat-label">TVL</span>
-                                    <span className="stat-value">{formatTVL(pool.tvl_usd)}</span>
+                                    <span className="stat-value">${formatTVL(pool.tvl_usd)}</span>
                                 </div>
-                                <div className="pool-stat">
-                                    <span className="stat-label">SHIT Price</span>
-                                    <span className="stat-value">${formatPrice(pool.shit_price_usd)}</span>
+                            </div>
+                            <div className="token-amounts">
+                                <div className="token-amount">
+                                    <span className="token-symbol">{pool.token0_symbol}</span>
+                                    <div>
+                                        <span className="amount-value">{formatTokenAmount(pool.token0_amount_human)}</span>
+                                        <span className="usd-value"> (${formatTVL(pool.token0_usd_value)})</span>
+                                    </div>
+                                </div>
+                                <div className="token-amount">
+                                    <span className="token-symbol">{pool.token1_symbol}</span>
+                                    <div>
+                                        <span className="amount-value">{formatTokenAmount(pool.token1_amount_human)}</span>
+                                        <span className="usd-value"> (${formatTVL(pool.token1_usd_value)})</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
