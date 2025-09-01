@@ -36,6 +36,11 @@ bun run web4_mainnet
 
 
 
+### LNKS
+- https://t.me/huggiesdotnear
+- https://huggies.near.social/
+- https://app.rhea.finance/#near|shit-1170.meme-cooking.near
+
 ---
 
 copyright 2025 by sleet.near

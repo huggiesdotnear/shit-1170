@@ -5,8 +5,8 @@ import { useEffect } from 'preact/hooks';
 
 // app sections
 import { ROUTES } from '../ts/routes';
-import App_section_loading from './section_loading';
-import App_section_swap from './section_swap';
+// import App_section_loading from './section_loading';
+// import App_section_swap from './section_swap';
 import App_section_info from './section_info';
 import App_section_huggies from './section_huggies';
 
@@ -17,7 +17,7 @@ const App_section_route: FunctionalComponent = () => {
         // Only redirect if we're on the root path
         if (window.location.pathname === '/') {
             const timer = setTimeout(() => {
-                route('/swap');
+                route('/info');
             }, 1000); // 1 seconds
 
             return () => clearTimeout(timer);
@@ -26,10 +26,10 @@ const App_section_route: FunctionalComponent = () => {
 
     return (
         <Router>
-            <App_section_loading path={ROUTES.home.path} />
-            <App_section_swap path={ROUTES.swap.path} />
+            {/* <App_section_loading path={ROUTES.home.path} /> */}
+            {/* <App_section_swap path={ROUTES.swap.path} /> */}
+            <App_section_huggies path={ROUTES.home.path} />
             <App_section_info path={ROUTES.info.path} />
-            <App_section_huggies path={ROUTES.huggies.path} />
         </Router>
     );
 };
