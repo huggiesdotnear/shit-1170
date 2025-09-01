@@ -98,52 +98,62 @@
   color: #f44336;
 }
 
-/* Mobile responsive - more compact */
+/* Mobile responsive - NUCLEAR OPTION */
 @media (max-width: 768px) {
   .info_holders {
     padding: 15px;
   }
   
   .holder-item {
-    padding: 10px 15px;
+    padding: 12px;
     margin-bottom: 8px;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 8px !important;
   }
   
   .holder-left {
-    gap: 8px;
-    min-width: 0;
-    flex: 1;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    width: 100% !important;
   }
   
   .holder-rank {
-    font-size: 12px;
-    min-width: 25px;
-    flex-shrink: 0;
+    font-size: 14px !important;
+    min-width: 30px !important;
+    color: #DA291C !important;
+    font-weight: bold !important;
   }
   
   .type-icon {
-    font-size: 16px;
-    flex-shrink: 0;
+    font-size: 16px !important;
   }
   
   .account-id {
-    font-size: 12px;
-    min-width: 0;
-    flex: 1;
-    max-width: 120px;
+    font-size: 14px !important;
+    color: #333 !important;
+    font-weight: 500 !important;
+    flex: 1 !important;
   }
   
   .holder-right {
-    gap: 1px;
-    flex-shrink: 0;
-    min-width: 80px;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+    padding-top: 4px !important;
+    border-top: 1px solid #eee !important;
   }
   
   .holder-balance {
-    font-size: 14px;
+    font-size: 16px !important;
+    color: #4CAF50 !important;
+    font-weight: bold !important;
   }
   
   .holder-percentage {
-    font-size: 11px;
+    font-size: 14px !important;
+    color: #666 !important;
   }
 }
