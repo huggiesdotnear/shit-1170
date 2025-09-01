@@ -1,6 +1,6 @@
 
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'preact/hooks';
 import { fetchAllPoolsInfo, fetchShitPrice, type PoolInfo } from '../../ts/info/shit_lp_price';
 
 const App_section_info_lp = () => {
