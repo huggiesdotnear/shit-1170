@@ -4,7 +4,7 @@
 const App_section_info_holders = () => {
     return (
         <div className="info_holders">
-            <h1>on chain info COMING SOON</h1>
+            <h5>holders</h5>
         </div>
     );
   };

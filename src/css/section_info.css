@@ -3,4 +3,7 @@
     color: var(--drk_color_one);
     margin: 5px;
     padding: 5px;
+
+    width: 90%;
+    max-width: 90%;
 }
