@@ -29,7 +29,9 @@ interface CachedData {
 const KNOWN_ACCOUNTS: Record<string, 'dev' | 'dex' | 'nft'> = {
     'sleet.near': 'dev',
     'huggies.near': 'dev',
+    'nonresistant.near': 'dev',
     'v2.ref-finance.near': 'dex',
+    'veax.near': 'dex',
     'notdone.near': 'nft',
     'outwit.near': 'nft',
 };
