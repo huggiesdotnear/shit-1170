@@ -135,6 +135,7 @@ const App_section_info_holders = () => {
                     {refreshing ? '🔄 Refreshing...' : '🔄 Refresh Data'}
                 </button>
             </div>
+            <p>🖼️ these near accounts are available as NFTs on <a href="https://namesky.app/" target="_blank">namesky</a></p>
         </div>
     );
 };
