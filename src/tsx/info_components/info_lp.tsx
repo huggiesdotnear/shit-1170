@@ -76,7 +76,7 @@ const App_section_info_lp = () => {
             <div className="lp-header">
                 <div className="lp-stat">
                     <h3>Total TVL</h3>
-                    <div className="stat-value">{formatTVL(getTotalTVL())}</div>
+                    <div className="stat-value">${formatTVL(getTotalTVL())}</div>
                 </div>
                 <div className="lp-stat">
                     <h3>Pools</h3>
@@ -134,7 +134,7 @@ const App_section_info_lp = () => {
                                     <span className="token-symbol">{pool.token1_symbol}</span>
                                     <div>
                                         <span className="amount-value">{formatTokenAmount(pool.token1_amount_human)}</span>
-                                        <span className="usd-value"> (${formatTVL(pool.token1_usd_value)})</span>
+                                        <span className="usd-value"> ($${formatTVL(pool.token1_usd_value)})</span>
                                     </div>
                                 </div>
                             </div>
