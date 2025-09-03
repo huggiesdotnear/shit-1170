@@ -42,7 +42,8 @@ const getTokenSymbol = (tokenId: string): string => {
         [TOKENS.WNEAR]: 'wNEAR',
         [TOKENS.STNEAR]: 'stNEAR',
         [TOKENS.JAMBO]: 'JAMBO',
-        [TOKENS.PUMP]: 'PUMP'
+        [TOKENS.PUMP]: 'PUMP',
+        [TOKENS.CRANS]: 'CRANS'
     };
     return tokenMap[tokenId] || tokenId.split('.')[0].toUpperCase();
 };
@@ -140,12 +141,14 @@ export const fetchAllPoolsInfo = async (): Promise<PoolInfo[]> => {
     const stNearPrice = await fetchTokenPrice(TOKENS.STNEAR);
     const jamboPrice = await fetchTokenPrice(TOKENS.JAMBO);
     const pumpPrice = await fetchTokenPrice(TOKENS.PUMP);
+    const cransPrice = await fetchTokenPrice(TOKENS.CRANS);
 
     const priceMap: Record<string, number> = {
         [TOKENS.WNEAR]: nearPrice,
         [TOKENS.STNEAR]: stNearPrice,
         [TOKENS.JAMBO]: jamboPrice,
         [TOKENS.PUMP]: pumpPrice,
+        [TOKENS.CRANS]: cransPrice,
         [TOKENS.SHIT]: 0 // Will be calculated from pools
     };
 
