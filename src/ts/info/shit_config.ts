@@ -3,7 +3,8 @@ export const POOLS = {
     SHIT_WNEAR: 5767,
     SHIT_STNEAR: 6524,
     SHIT_JAMBO: 6525,
-    SHIT_PUMPOPOLY: 6526
+    SHIT_PUMPOPOLY: 6526,
+    SHIT_CRANS: 6538
   };
   
   export const TOKENS = {
