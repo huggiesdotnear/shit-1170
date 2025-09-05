@@ -1,6 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import { fetchHolders, type ProcessedHolder } from '../../ts/info/shit_holders';
+import { fetchShitPrice } from '../../ts/info/shit_lp_price';
 
 const App_section_info_holders = () => {
     const [holders, setHolders] = useState<ProcessedHolder[]>([]);
@@ -9,13 +10,18 @@ const App_section_info_holders = () => {
     const [loading, setLoading] = useState(true);
     const [refreshing, setRefreshing] = useState(false);
     const [error, setError] = useState<string | null>(null);
+    const [shitPrice, setShitPrice] = useState<number>(0);
 
     const loadHolders = async (forceRefresh = false) => {
         try {
             setLoading(true);
-            const holdersData = await fetchHolders(forceRefresh);
+            const [holdersData, priceData] = await Promise.all([
+                fetchHolders(forceRefresh),
+                fetchShitPrice()
+            ]);
             setHolders(holdersData);
             setFilteredHolders(holdersData);
+            setShitPrice(priceData);
         } catch (err) {
             setError(err instanceof Error ? err.message : 'Failed to load holders');
         } finally {
@@ -56,6 +62,25 @@ const App_section_info_holders = () => {
             case 'dex': return '🔄';
             case 'nft': return '🖼️';
             default: return '👤';
+        }
+    };
+
+    const calculateUsdValue = (balance: string): string => {
+        if (!shitPrice) return '$0.00';
+        
+        const num = BigInt(balance);
+        const divisor = BigInt('1000000000000000000'); // 18 decimals
+        const tokenAmount = Number(num / divisor);
+        const usdValue = tokenAmount * shitPrice;
+        
+        if (usdValue >= 1000000) {
+            return `$${(usdValue / 1000000).toFixed(2)}M`;
+        } else if (usdValue >= 1000) {
+            return `$${(usdValue / 1000).toFixed(2)}K`;
+        } else if (usdValue >= 1) {
+            return `$${usdValue.toFixed(2)}`;
+        } else {
+            return `$${usdValue.toFixed(4)}`;
         }
     };
 
@@ -119,7 +144,9 @@ const App_section_info_holders = () => {
                             <span className="account-id">{holder.account_id}</span>
                         </div>
                         <div className="holder-right">
-                            <span className="holder-balance">{holder.balanceFormatted}</span>
+                            <span className="holder-balance">
+                                {holder.balanceFormatted} ({calculateUsdValue(holder.balance)})
+                            </span>
                             <span className="holder-percentage">{holder.percentage}</span>
                         </div>
                     </div>
