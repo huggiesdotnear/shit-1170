@@ -31,12 +31,13 @@ mdbook build
 - swap
 - seeing onchain holder and lp price info
 - earn shit
-- trade accounts that hold
+- trade accounts that hold shit
 
 
 
 ### TOD0
-- [ ]
+- [ ] add muilte token swap
+- [ ] add dashboard and svg sharing options
 
 
 
