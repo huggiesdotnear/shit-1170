@@ -1,3 +1,8 @@
 # Summary
 
-- [Chapter 1](./chapter_1.md)
+[Introduction](README.md)
+
+
+---
+
+# copyright: 2025 by sleet.near
