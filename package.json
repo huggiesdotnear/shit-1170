@@ -7,7 +7,7 @@
     "clean": "rm -rf dist",
     "build": "npm run clean && rsbuild build",
     "typecheck": "tsc --noEmit",
-    "dev": "rsbuild dev --open",
+    "dev": "rsbuild dev --open --port 3001",
     "preview": "rsbuild preview",
     "web4_mainnet": "web4-deploy dist web4.huggies.near --nearfs"
   },
