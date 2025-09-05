@@ -17,3 +17,6 @@ dist/
 bun.lock
 # fastintear-llm-context.md
 package-lock.json
+
+# md book
+book

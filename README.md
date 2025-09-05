@@ -1,5 +1,5 @@
 # huggies_app
- 💩 app for swaping $SHIT, finding info, and earning $SHIT, built on near 
+💩 app for swaping $SHIT, finding info, and earning $SHIT, built on near 
 
 
 ---
@@ -8,6 +8,7 @@
 
 
 ```sh
+# preact ui
 bun i
 bun run dev
 bun run build
@@ -21,6 +22,9 @@ export NEAR_SIGNER_KEY=ed25519:your_key_here
 export NODE_URL=https://rpc.intea.rs
 bun run web4_mainnet
 
+# mdbook
+mdbook serve --open
+mdbook build
 ```
 
 ### FEATURES
