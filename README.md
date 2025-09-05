@@ -35,9 +35,10 @@ mdbook build
 
 
 
-### TOD0
+### TOD0 (or not to do)
 - [ ] add muilte token swap
 - [ ] add dashboard and svg sharing options
+
 
 
 
