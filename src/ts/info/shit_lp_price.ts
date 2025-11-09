@@ -46,6 +46,7 @@ const getTokenSymbol = (tokenId: string): string => {
     [TOKENS.CRANS]: "CRANS",
     [TOKENS.XPOST]: "XPOST",
     [TOKENS.VOTE]: "VOTE",
+    [TOKENS.N1813]: "N1813",
   };
   return tokenMap[tokenId] || tokenId.split(".")[0].toUpperCase();
 };
@@ -153,6 +154,7 @@ export const fetchAllPoolsInfo = async (): Promise<PoolInfo[]> => {
   const cransPrice = await fetchTokenPrice(TOKENS.CRANS);
   const xpostPrice = await fetchTokenPrice(TOKENS.XPOST);
   const votePrice = await fetchTokenPrice(TOKENS.VOTE);
+  const n1813Price = await fetchTokenPrice(TOKENS.N1813);
 
   const priceMap: Record<string, number> = {
     [TOKENS.WNEAR]: nearPrice,
@@ -162,6 +164,7 @@ export const fetchAllPoolsInfo = async (): Promise<PoolInfo[]> => {
     [TOKENS.CRANS]: cransPrice,
     [TOKENS.XPOST]: xpostPrice,
     [TOKENS.VOTE]: votePrice,
+    [TOKENS.N1813]: n1813Price,
     [TOKENS.SHIT]: 0, // Will be calculated from pools
   };
 

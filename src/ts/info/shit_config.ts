@@ -6,7 +6,8 @@ export const POOLS = {
     SHIT_PUMPOPOLY: 6526,
     SHIT_CRANS: 6538,
     SHIT_XPOST: 6561,
-    SHIT_VOTE: 6620
+    SHIT_VOTE: 6620,
+    SHIT_N1813: 6674
   };
   
   export const TOKENS = {
@@ -21,7 +22,8 @@ export const POOLS = {
     STNEAR: "meta-pool.near",
     JAMBO: "jambo-1679.meme-cooking.near",
     XPOST: "xpost-1634.meme-cooking.near",
-    VOTE: "vote-1737.meme-cooking.near"
+    VOTE: "vote-1737.meme-cooking.near",
+    N1813: "n-1813.meme-cooking.near"
   };
   
   export const TOKEN_DECIMALS = {
@@ -35,6 +37,7 @@ export const POOLS = {
     [TOKENS.STNEAR]: 24,
     [TOKENS.JAMBO]: 18,
     [TOKENS.XPOST]: 18,
-    [TOKENS.VOTE]: 18
+    [TOKENS.VOTE]: 18,
+    [TOKENS.N1813]: 18
   };
 
