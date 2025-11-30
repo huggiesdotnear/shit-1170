@@ -7,7 +7,8 @@ export const POOLS = {
     SHIT_CRANS: 6538,
     SHIT_XPOST: 6561,
     SHIT_VOTE: 6620,
-    SHIT_NILLIONS: 6674
+    SHIT_NILLIONS: 6674,
+    SHIT_PUSSY: 6712
   };
   
   export const TOKENS = {
@@ -23,7 +24,8 @@ export const POOLS = {
     JAMBO: "jambo-1679.meme-cooking.near",
     XPOST: "xpost-1634.meme-cooking.near",
     VOTE: "vote-1737.meme-cooking.near",
-    NILLIONS: "n-1813.meme-cooking.near"
+    NILLIONS: "n-1813.meme-cooking.near",
+    PUSSY: "pussy.laboratory.jumpfinance.near"
   };
   
   export const TOKEN_DECIMALS = {
@@ -38,6 +40,7 @@ export const POOLS = {
     [TOKENS.JAMBO]: 18,
     [TOKENS.XPOST]: 18,
     [TOKENS.VOTE]: 18,
-    [TOKENS.NILLIONS]: 18
+    [TOKENS.NILLIONS]: 18,
+    [TOKENS.PUSSY]: 18
   };
 
