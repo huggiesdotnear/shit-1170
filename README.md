@@ -25,6 +25,7 @@ bun run clean
 export NEAR_SIGNER_KEY=ed25519:your_key_here
 export NODE_URL=https://rpc.intea.rs
 bun run web4_mainnet
+bun run web4-deploy dist shit-1170.near --nearfs
 
 # mdbook
 mdbook serve --open
