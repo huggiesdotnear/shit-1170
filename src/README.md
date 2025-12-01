@@ -1,5 +1,8 @@
-# huggies_app
-💩 app for swaping $SHIT, finding info, and earning $SHIT, built on near
+# shit-1170.near
+shit-1170.meme-cooking.near web page
+
+<!--# huggies_app-->
+<!--💩 app for swaping $SHIT, finding info, and earning $SHIT, built on near-->
 
 ---
 

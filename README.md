@@ -31,7 +31,7 @@ mdbook serve --open
 mdbook build
 ```
 
-### FEATURES
+~~### FEATURES~~
 - swap
 - seeing onchain holder and lp price info
 - earn shit
@@ -39,7 +39,7 @@ mdbook build
 
 
 
-### TOD0 (or not to do)
+~~### TOD0 (or not to do)~~
 - [ ] add muilte token swap
 - [ ] add dashboard and svg sharing options
 
