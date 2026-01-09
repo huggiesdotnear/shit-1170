@@ -29,6 +29,7 @@ interface CachedData {
 const KNOWN_ACCOUNTS: Record<string, "dev" | "dex" | "vault" | "nft"> = {
   "sleet.near": "dev",
   "vault.huggies.near": "vault",
+  "growth.huggies.near": "vault",
   "sleet_mainnet_test_yes_doxing_myself_sorry_for_rugs.near": "dev",
   "huggies.near": "dev",
   "nonresistant.near": "dev",
