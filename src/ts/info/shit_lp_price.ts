@@ -1,8 +1,9 @@
 // Prices and LP Pool Data
 // https://prices.intear.tech/price?token_id=
 // just returns a raw string example: 6.351883758720653e-7
-
 import { POOLS, TOKENS, TOKEN_DECIMALS } from "./shit_config";
+import * as near from "fastintear";
+// ============================================================
 
 export interface PoolData {
   pool_kind: string;
@@ -86,7 +87,7 @@ const fetchPoolData = async (poolId: number): Promise<PoolData | null> => {
     console.log(`🏊 Fetching pool data for pool ${poolId}`);
 
     // Use fastintear's near.view() method
-    const result = await (window as any).near.view({
+    const result = await near.view({
       contractId: "v2.ref-finance.near",
       methodName: "get_pool",
       args: { pool_id: poolId },
