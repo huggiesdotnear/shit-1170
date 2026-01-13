@@ -22,6 +22,7 @@ bun run clean
 
 
 # web4
+# bun run web4-deploy dist shit-1170.near --nearfs
 bun run htmlto.js
 bun run asb
 
