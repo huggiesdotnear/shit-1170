@@ -21,11 +21,10 @@ bun run preview
 bun run clean
 
 
-# web4 deploy
-export NEAR_SIGNER_KEY=ed25519:your_key_here
-export NODE_URL=https://rpc.intea.rs
-bun run web4_mainnet
-bun run web4-deploy dist shit-1170.near --nearfs
+# web4
+bun run htmlto.js
+bun run asb
+
 
 # mdbook
 mdbook serve --open
