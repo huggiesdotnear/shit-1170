@@ -26,6 +26,9 @@ bun run clean
 bun run htmlto.js
 bun run asb
 
+# w3
+w3 space use TEMP
+w3 up dist
 
 # mdbook
 mdbook serve --open
