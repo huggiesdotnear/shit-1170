@@ -22,9 +22,9 @@ bun run clean
 
 
 # web4
-# bun run web4-deploy dist shit-1170.near --nearfs
-bun run htmlto.js
-bun run asb
+bun run web4-deploy dist shit-1170.near --nearfs
+# bun run htmlto.js
+# bun run asb
 
 # w3
 w3 space use TEMP
