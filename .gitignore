@@ -21,3 +21,6 @@ package-lock.json
 # md book
 book
 /build
+
+# Local Netlify folder
+.netlify

@@ -33,6 +33,10 @@ w3 up dist
 # mdbook
 mdbook serve --open
 mdbook build
+
+# netlify
+netlify deploy
+netlify deploy --prod
 ```
 
 ~~### FEATURES~~

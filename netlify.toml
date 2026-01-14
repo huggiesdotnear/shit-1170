@@ -1,0 +1,6 @@
+# netlify.toml
+[build]
+  # The command that builds your project
+  command = "bun run build"
+  # The directory to publish (upload) to Netlify
+  publish = "dist"
