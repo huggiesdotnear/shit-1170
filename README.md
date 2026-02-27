@@ -1,25 +1,25 @@
-# Development
+# shit-1170.near
+shit-1170.meme-cooking.near web page
 
-Your new bare-bones project includes minimal organization with a single `main.rs` file and a few assets.
+---
 
-```
-project/
-├─ assets/ # Any assets that are used by the app should be placed here
-├─ src/
-│  ├─ main.rs # main.rs is the entry point to your application and currently contains all components for the app
-├─ Cargo.toml # The Cargo.toml file defines the dependencies and feature flags for your project
-```
-
-### Serving Your App
-
-Run the following command in the root of your project to start developing with the default platform:
+### DEV
 
 ```bash
+# the default platform is web
 dx serve
+# bundle for web
+dx bundle --platform web
+
+# CARGO COMMANDS
+cargo run
+cargo check
+cargo test
+cargo clean
 ```
 
-To run for a different platform, use the `--platform platform` flag. E.g.
-```bash
-dx serve --platform desktop
-```
+---
 
+
+
+copyright 2026 by sleet.near
