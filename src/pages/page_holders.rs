@@ -4,7 +4,7 @@ use dioxus::prelude::*;
 #[component]
 pub fn PAGE_HOLDERS() -> Element {
     rsx! {
-        h1 { "HOME" }
+        h1 { "HOLDERS" }
     }
 }
 // =========================================

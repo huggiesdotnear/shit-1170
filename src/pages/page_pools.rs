@@ -1,10 +1,11 @@
-// shit_1170
+use dioxus::prelude::*;
 // =========================================
-pub mod pages {
-    pub mod page_about;
-    pub mod page_holders;
-    pub mod page_home;
-    pub mod page_pools;
+// PAGE_HOLDERS
+#[component]
+pub fn PAGE_POOLS() -> Element {
+    rsx! {
+        h1 { "POOLS" }
+    }
 }
 // =========================================
 // =========================================
