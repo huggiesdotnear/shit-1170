@@ -1,15 +1,16 @@
+#![allow(non_camel_case_types)]
+// =========================================
 use dioxus::prelude::*;
+use shit_1170::pages::page_home::PAGE_HOME;
 // =========================================
 // =========================================
-// Route
+// SHIT_APP_ROUTE
 #[derive(Debug, Clone, Routable, PartialEq)]
 #[rustfmt::skip]
-enum Route {
-    #[layout(Navbar)]
+enum SHIT_APP_ROUTE {
+    #[layout(MAIN_APP)]
     #[route("/")]
-    Home {},
-    #[route("/blog/:id")]
-    Blog { id: i32 },
+     PAGE_HOME {}
 }
 // =========================================
 // =========================================
@@ -28,78 +29,27 @@ fn App() -> Element {
     rsx! {
         document::Link { rel: "icon", href: FAVICON }
         document::Link { rel: "stylesheet", href: MAIN_CSS }
-        Router::<Route> {}
+        Router::<SHIT_APP_ROUTE> {}
     }
 }
-
+// =========================================
+// =========================================
+/// MAIN_APP
 #[component]
-pub fn Hero() -> Element {
+fn MAIN_APP() -> Element {
     rsx! {
-        div {
-            id: "hero",
-            // img { src: HEADER_SVG, id: "header" }
-            div { id: "links",
-                a { href: "https://dioxuslabs.com/learn/0.6/", "📚 Learn Dioxus" }
-                a { href: "https://dioxuslabs.com/awesome", "🚀 Awesome Dioxus" }
-                a { href: "https://github.com/dioxus-community/", "📡 Community Libraries" }
-                a { href: "https://github.com/DioxusLabs/sdk", "⚙️ Dioxus Development Kit" }
-                a { href: "https://marketplace.visualstudio.com/items?itemName=DioxusLabs.dioxus", "💫 VSCode Extension" }
-                a { href: "https://discord.gg/XgGxMSkvUM", "👋 Community Discord" }
-            }
-        }
-    }
-}
-
-/// Home page
-#[component]
-fn Home() -> Element {
-    rsx! {
-        Hero {}
-
-    }
-}
-
-/// Blog page
-#[component]
-pub fn Blog(id: i32) -> Element {
-    rsx! {
-        div {
-            id: "blog",
-
-            // Content
-            h1 { "This is blog #{id}!" }
-            p { "In blog #{id}, we show how the Dioxus router works and how URL parameters can be passed as props to our route components." }
-
-            // Navigation links
-            Link {
-                to: Route::Blog { id: id - 1 },
-                "Previous"
-            }
-            span { " <---> " }
-            Link {
-                to: Route::Blog { id: id + 1 },
-                "Next"
-            }
-        }
-    }
-}
-
-/// Shared navbar component.
-#[component]
-fn Navbar() -> Element {
-    rsx! {
+        h1 { "shit-1170.meme-cooking.near" }
         div {
             id: "navbar",
             Link {
-                to: Route::Home {},
+                to: SHIT_APP_ROUTE::PAGE_HOME {},
                 "Home"
-            }
-            Link {
-                to: Route::Blog { id: 1 },
-                "Blog"
             }
         }
 
-        Outlet::<Route> {}
+        Outlet::<SHIT_APP_ROUTE> {}
     }
 }
+// =========================================
+// =========================================
+// copyright 2026 by sleet.near
