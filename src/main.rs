@@ -6,11 +6,10 @@ use shit_1170::pages::page_home::PAGE_HOME;
 // =========================================
 // SHIT_APP_ROUTE
 #[derive(Debug, Clone, Routable, PartialEq)]
-#[rustfmt::skip]
 enum SHIT_APP_ROUTE {
     #[layout(MAIN_APP)]
     #[route("/")]
-     PAGE_HOME {}
+    PAGE_HOME {},
 }
 // =========================================
 // =========================================
