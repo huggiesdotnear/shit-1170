@@ -8,7 +8,8 @@ pub mod pages {
 }
 // =========================================
 pub mod logic {
-    pub mod slogans;
+    pub mod const_slogans;
+    pub mod fn_random_slogan;
 }
 // =========================================
 // copyright 2026 by sleet.near
