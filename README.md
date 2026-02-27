@@ -8,6 +8,7 @@ shit-1170.meme-cooking.near web page
 ```bash
 # the default platform is web
 dx serve
+dx check
 # bundle for web
 dx bundle --platform web
 
