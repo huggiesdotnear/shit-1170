@@ -37,6 +37,7 @@ const KNOWN_ACCOUNTS: Record<string, "dev" | "dex" | "vault" | "nft"> = {
   "shitbyhuggies.tipbot.intear.near": "dev",
   "v2.ref-finance.near": "dex",
   "veax.near": "dex",
+  "dex.intear.near": "dex",
   "notdone.near": "nft",
   "outwit.near": "nft",
   "fediverse.near": "nft",
