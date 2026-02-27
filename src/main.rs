@@ -1,25 +1,7 @@
 #![allow(non_camel_case_types)]
 // =========================================
 use dioxus::prelude::*;
-use shit_1170::pages::page_about::PAGE_ABOUT;
-use shit_1170::pages::page_holders::PAGE_HOLDERS;
-use shit_1170::pages::page_home::PAGE_HOME;
-use shit_1170::pages::page_pools::PAGE_POOLS;
-// =========================================
-// =========================================
-// SHIT_APP_ROUTE
-#[derive(Debug, Clone, Routable, PartialEq)]
-enum SHIT_APP_ROUTE {
-    #[layout(MAIN_APP)]
-    #[route("/")]
-    PAGE_HOME {},
-    #[route("/holders")]
-    PAGE_HOLDERS {},
-    #[route("/pools")]
-    PAGE_POOLS {},
-    #[route("/about")]
-    PAGE_ABOUT {},
-}
+use shit_1170::logic::enum_route::SHIT_APP_ROUTE;
 // =========================================
 // =========================================
 const FAVICON: Asset = asset!("/assets/shit_icon_blue.svg");
@@ -40,37 +22,6 @@ fn App() -> Element {
         document::Link { rel: "stylesheet", href: MAIN_CSS }
         document::Link { rel: "stylesheet", href: A_CSS }
         Router::<SHIT_APP_ROUTE> {}
-    }
-}
-// =========================================
-// =========================================
-/// MAIN_APP
-#[component]
-fn MAIN_APP() -> Element {
-    use_effect(|| {
-        println!("Mounted!");
-    });
-    rsx! {
-        h1 { "shit-1170.meme-cooking.near" }
-        div {
-            id: "navbar",
-            Link {
-                to: SHIT_APP_ROUTE::PAGE_HOLDERS {},
-                "HOLDERS"
-            }
-            Link {
-                to: SHIT_APP_ROUTE::PAGE_POOLS {},
-                "POOLS"
-            }
-            Link {
-                to: SHIT_APP_ROUTE::PAGE_ABOUT {},
-                "ABOUT"
-            }
-        }
-
-        Outlet::<SHIT_APP_ROUTE> {}
-
-        footer { "COPYRIGHT 2026 BY SLEET.NEAR" }
     }
 }
 // =========================================
