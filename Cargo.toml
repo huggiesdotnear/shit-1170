@@ -19,7 +19,7 @@ path = "src/main.rs"
 
 [dependencies]
 dioxus = { version = "0.6.0", features = ["router"] }
-web-sys = { version = "0.3.90", features = ["Window", "Crypto", "SubtleCrypto"] }
+web-sys = { version = "0.3.90", features = ["Crypto", "SubtleCrypto", "Window", "HtmlDocument", "Location", "Request", "RequestInit", "Response", "console", "Headers"] }
 
 
 # =================================================

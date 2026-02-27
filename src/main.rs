@@ -47,6 +47,9 @@ fn App() -> Element {
 /// MAIN_APP
 #[component]
 fn MAIN_APP() -> Element {
+    use_effect(|| {
+        println!("Mounted!");
+    });
     rsx! {
         h1 { "shit-1170.meme-cooking.near" }
         div {
