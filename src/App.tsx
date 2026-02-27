@@ -12,7 +12,7 @@ const App = () => {
   return (
     <article>
       <App_section_route/>
-      {/* <App_section_footer/> */}
+       {/*<App_section_footer/> */}
     </article>
   );
 };
