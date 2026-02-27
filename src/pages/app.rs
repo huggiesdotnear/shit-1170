@@ -1,14 +1,11 @@
 #![allow(non_camel_case_types)]
 // =========================================
-use dioxus::prelude::*;
 use crate::logic::enum_route::SHIT_APP_ROUTE;
+use dioxus::prelude::*;
 // =========================================
 /// MAIN_APP
 #[component]
 pub fn MAIN_APP() -> Element {
-    use_effect(|| {
-        println!("Mounted!");
-    });
     rsx! {
         h1 { "shit-1170.meme-cooking.near" }
         div {

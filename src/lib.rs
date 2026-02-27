@@ -10,8 +10,9 @@ pub mod pages {
 // =========================================
 pub mod logic {
     pub mod const_slogans;
-    pub mod fn_random_slogan;
     pub mod enum_route;
+    pub mod fn_random_slogan;
+    pub mod hello;
 }
 // =========================================
 // copyright 2026 by sleet.near

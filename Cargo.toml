@@ -19,6 +19,8 @@ path = "src/main.rs"
 
 [dependencies]
 dioxus = { version = "0.6.0", features = ["router"] }
+gloo-timers = { version = "0.3.0", features = ["futures"] }
+wasm-bindgen-futures = "0.4.63"
 web-sys = { version = "0.3.90", features = ["Crypto", "SubtleCrypto", "Window", "HtmlDocument", "Location", "Request", "RequestInit", "Response", "console", "Headers"] }
 
 

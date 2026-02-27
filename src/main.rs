@@ -2,6 +2,7 @@
 // =========================================
 use dioxus::prelude::*;
 use shit_1170::logic::enum_route::SHIT_APP_ROUTE;
+use shit_1170::logic::hello::hello;
 // =========================================
 // =========================================
 const FAVICON: Asset = asset!("/assets/shit_icon_blue.svg");
@@ -17,6 +18,9 @@ fn main() {
 // =========================================
 #[component]
 fn App() -> Element {
+    use_effect(|| {
+        hello();
+    });
     rsx! {
         document::Link { rel: "icon", href: FAVICON }
         document::Link { rel: "stylesheet", href: MAIN_CSS }
