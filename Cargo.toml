@@ -19,7 +19,7 @@ path = "src/main.rs"
 
 [dependencies]
 dioxus = { version = "0.6.0", features = ["router"] }
-getrandom = { version = "0.4.1", features = ["wasm_js"] }
+web-sys = { version = "0.3.90", features = ["Window", "Crypto", "SubtleCrypto"] }
 
 
 # =================================================
@@ -30,8 +30,6 @@ default = ["web"]
 web = ["dioxus/web"]
 desktop = ["dioxus/desktop"]
 mobile = ["dioxus/mobile"]
-
-[profile]
 
 [profile.wasm-dev]
 inherits = "dev"
