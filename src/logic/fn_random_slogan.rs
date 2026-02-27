@@ -1,6 +1,5 @@
 use crate::logic::const_slogans::HUGGIES_SLOGANS;
 use web_sys::window;
-
 // =========================================
 fn random_usize() -> usize {
     window()
@@ -13,7 +12,6 @@ fn random_usize() -> usize {
         .unwrap_or(0)
 }
 // =========================================
-
 pub fn random_slogan() -> &'static str {
     let len = HUGGIES_SLOGANS.len();
     let idx = if len > 0 { random_usize() % len } else { 0 };
