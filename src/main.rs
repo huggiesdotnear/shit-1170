@@ -24,6 +24,7 @@ enum SHIT_APP_ROUTE {
 // =========================================
 const FAVICON: Asset = asset!("/assets/shit_icon_blue.svg");
 const MAIN_CSS: Asset = asset!("/assets/main.css");
+const A_CSS: Asset = asset!("/assets/a.css");
 // =========================================
 // =========================================
 // main
@@ -37,6 +38,7 @@ fn App() -> Element {
     rsx! {
         document::Link { rel: "icon", href: FAVICON }
         document::Link { rel: "stylesheet", href: MAIN_CSS }
+        document::Link { rel: "stylesheet", href: A_CSS }
         Router::<SHIT_APP_ROUTE> {}
     }
 }
@@ -50,12 +52,22 @@ fn MAIN_APP() -> Element {
         div {
             id: "navbar",
             Link {
-                to: SHIT_APP_ROUTE::PAGE_HOME {},
-                "Home"
+                to: SHIT_APP_ROUTE::PAGE_HOLDERS {},
+                "HOLDERS"
+            }
+            Link {
+                to: SHIT_APP_ROUTE::PAGE_POOLS {},
+                "POOLS"
+            }
+            Link {
+                to: SHIT_APP_ROUTE::PAGE_ABOUT {},
+                "ABOUT"
             }
         }
 
         Outlet::<SHIT_APP_ROUTE> {}
+
+        footer { "COPYRIGHT 2026 BY SLEET.NEAR" }
     }
 }
 // =========================================

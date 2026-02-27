@@ -7,5 +7,8 @@ pub mod pages {
     pub mod page_pools;
 }
 // =========================================
+pub mod logic {
+    pub mod slogans;
+}
 // =========================================
 // copyright 2026 by sleet.near
