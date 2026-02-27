@@ -6,3 +6,5 @@ pub fn random_slogan() -> &'static str {
     let idx = rng.random_range(0..HUGGIES_SLOGANS.len());
     HUGGIES_SLOGANS[idx]
 }
+// =========================================
+// copyright 2026 by sleet.near
