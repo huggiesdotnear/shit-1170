@@ -1,5 +1,7 @@
 use dioxus::prelude::*;
-
+// =========================================
+// =========================================
+// Route
 #[derive(Debug, Clone, Routable, PartialEq)]
 #[rustfmt::skip]
 enum Route {
@@ -9,19 +11,22 @@ enum Route {
     #[route("/blog/:id")]
     Blog { id: i32 },
 }
-
-// const FAVICON: Asset = asset!("/assets/favicon.ico");
+// =========================================
+// =========================================
+const FAVICON: Asset = asset!("/assets/shit_icon_blue.svg");
 const MAIN_CSS: Asset = asset!("/assets/main.css");
-// const HEADER_SVG: Asset = asset!("/assets/header.svg");
-
+// =========================================
+// =========================================
+// main
 fn main() {
     dioxus::launch(App);
 }
-
+// =========================================
+// =========================================
 #[component]
 fn App() -> Element {
     rsx! {
-        // document::Link { rel: "icon", href: FAVICON }
+        document::Link { rel: "icon", href: FAVICON }
         document::Link { rel: "stylesheet", href: MAIN_CSS }
         Router::<Route> {}
     }
