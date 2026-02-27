@@ -1,7 +1,10 @@
 #![allow(non_camel_case_types)]
 // =========================================
 use dioxus::prelude::*;
+use shit_1170::pages::page_about::PAGE_ABOUT;
+use shit_1170::pages::page_holders::PAGE_HOLDERS;
 use shit_1170::pages::page_home::PAGE_HOME;
+use shit_1170::pages::page_pools::PAGE_POOLS;
 // =========================================
 // =========================================
 // SHIT_APP_ROUTE
@@ -10,6 +13,12 @@ enum SHIT_APP_ROUTE {
     #[layout(MAIN_APP)]
     #[route("/")]
     PAGE_HOME {},
+    #[route("/holders")]
+    PAGE_HOLDERS {},
+    #[route("/pools")]
+    PAGE_POOLS {},
+    #[route("/about")]
+    PAGE_ABOUT {},
 }
 // =========================================
 // =========================================
