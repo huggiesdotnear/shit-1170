@@ -64,7 +64,7 @@
 }
 
 .pair-name {
-  color: #333;
+  color: var(--drk_color_one);
   font-weight: 600;
   font-size: 14px;
   margin-bottom: 4px;
@@ -103,7 +103,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  color: #333;
+  color: var(--drk_color_one);
   font-weight: 600;
   font-size: 16px;
 }
@@ -136,7 +136,7 @@
 }
 
 .pool-stat .stat-value {
-  color: #333;
+  color: var(--drk_color_one);
   font-weight: bold;
   font-size: 14px;
 }
@@ -159,7 +159,7 @@
 
 .token-symbol {
   font-weight: 600;
-  color: #333;
+  color: var(--drk_color_one);
 }
 
 .amount-value {
@@ -171,15 +171,18 @@
   font-weight: 500;
 }
 
-.loading, .error {
+.loading {
   text-align: center;
   padding: 40px;
-  color: white;
+  color: var(--drk_color_one);
   font-size: 16px;
 }
 
 .error {
+  text-align: center;
+  padding: 40px;
   color: #f44336;
+  font-size: 16px;
 }
 
 /* Mobile responsive */

@@ -109,7 +109,7 @@
 }
 
 .account-id {
-  color: #333;
+  color: var(--drk_color_one);
   font-weight: 500;
   font-size: 14px;
   overflow: hidden;
@@ -197,7 +197,7 @@
 
   .account-id {
     font-size: 14px !important;
-    color: #333 !important;
+    color: var(--drk_color_one) !important;
     font-weight: 500 !important;
     flex: 1 !important;
   }
