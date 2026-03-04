@@ -5,6 +5,10 @@
   font-size: 16px;
 }
 
+.info_links a {
+    text-decoration: none;
+}
+
 .info_links h3 {
   color: var(--drk_color_one);
   font-size: 24px;

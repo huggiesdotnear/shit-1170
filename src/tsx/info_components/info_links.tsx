@@ -29,19 +29,17 @@ const App_section_info_links = () => {
         }
     ];
 
-    const handleLinkClick = (url: string) => {
-        window.open(url, '_blank', 'noopener,noreferrer');
-    };
-
     return (
         <div className="info_links">
             <h3>Links</h3>
             <div className="links-grid">
                 {links.map((link, index) => (
-                    <div 
-                        key={index} 
+                    <a
+                        key={index}
+                        href={link.url}
                         className="link-card"
-                        onClick={() => handleLinkClick(link.url)}
+                        target="_blank"
+                        rel="noopener noreferrer"
                     >
                         <div className="link-icon">{link.icon}</div>
                         <div className="link-content">
@@ -49,7 +47,7 @@ const App_section_info_links = () => {
                             <div className="link-description">{link.description}</div>
                         </div>
                         <div className="link-arrow">→</div>
-                    </div>
+                    </a>
                 ))}
             </div>
         </div>
