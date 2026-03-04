@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { fetchHolders, type ProcessedHolder } from "../../ts/info/shit_holders";
-import { fetchShitPrice } from "../../ts/info/shit_lp_price";
+import { fetchShitPrice } from "../../ts/info/shit_lp_price_ref";
 
 const App_section_info_holders = () => {
   const [holders, setHolders] = useState<ProcessedHolder[]>([]);

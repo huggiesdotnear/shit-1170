@@ -2,7 +2,7 @@ import type { FunctionalComponent } from "preact";
 
 // info_components
 import App_section_info_holders from "./info_components/info_holders";
-import App_section_info_lp from "./info_components/info_lp";
+import App_section_info_lp from "./info_components/info_lp_ref";
 import App_section_info_links from "./info_components/info_links";
 
 // App_section_info.tsx

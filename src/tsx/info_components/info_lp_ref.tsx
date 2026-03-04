@@ -1,7 +1,7 @@
 
 
 import { useState, useEffect } from 'preact/hooks';
-import { fetchAllPoolsInfo, fetchShitPrice, type PoolInfo } from '../../ts/info/shit_lp_price';
+import { fetchAllPoolsInfo, fetchShitPrice, type PoolInfo } from '../../ts/info/shit_lp_price_ref';
 
 const App_section_info_lp = () => {
     const [poolsData, setPoolsData] = useState<PoolInfo[]>([]);
