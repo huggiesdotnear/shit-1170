@@ -6,7 +6,7 @@ const App_section_info_holders = () => {
   const [holders, setHolders] = useState<ProcessedHolder[]>([]);
   const [filteredHolders, setFilteredHolders] = useState<ProcessedHolder[]>([]);
   const [activeFilter, setActiveFilter] = useState<
-    "all" | "dev" | "dex" | "nft" | "vault"
+    "all" | "dev" | "dex" | "nft" | "vault" | "burn"
   >("all");
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
@@ -46,7 +46,7 @@ const App_section_info_holders = () => {
   }, [activeFilter, holders]);
 
   const handleFilterClick = (
-    filter: "all" | "dev" | "dex" | "vault" | "nft",
+    filter: "all" | "dev" | "dex" | "vault" | "nft" | "burn",
   ) => {
     setActiveFilter(filter);
   };
@@ -71,6 +71,8 @@ const App_section_info_holders = () => {
         return "🔄";
       case "nft":
         return "🖼️";
+      case "burn":
+        return "🔥";
       default:
         return "👤";
     }
@@ -147,6 +149,12 @@ const App_section_info_holders = () => {
           onClick={() => handleFilterClick("vault")}
         >
           🏦
+        </button>
+        <button
+          className={`filter-btn ${activeFilter === "burn" ? "active" : ""}`}
+          onClick={() => handleFilterClick("burn")}
+        >
+          🔥
         </button>
       </div>
 

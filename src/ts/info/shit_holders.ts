@@ -15,7 +15,7 @@ export interface HoldersResponse {
 }
 
 export interface ProcessedHolder extends HolderAccount {
-  type: "dev" | "dex" | "nft" | "regular" | "vault";
+  type: "dev" | "dex" | "nft" | "regular" | "vault" | "burn";
   balanceFormatted: string;
   percentage: string;
 }
@@ -26,7 +26,7 @@ interface CachedData {
 }
 
 // Known accounts mapping
-const KNOWN_ACCOUNTS: Record<string, "dev" | "dex" | "vault" | "nft"> = {
+const KNOWN_ACCOUNTS: Record<string, "dev" | "dex" | "vault" | "nft" | "burn"> = {
   "sleet.near": "dev",
   "vault.huggies.near": "vault",
   "growth.huggies.near": "vault",
@@ -49,6 +49,7 @@ const KNOWN_ACCOUNTS: Record<string, "dev" | "dex" | "vault" | "nft"> = {
   "hodldogshit.near": "nft",
   "sofo.near": "nft",
   "jeetersnotallowed.near": "nft",
+  "burn.sleet.near": "burn",
 };
 
 const TOTAL_SUPPLY = 1_000_000_000; // 1 billion tokens
