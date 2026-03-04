@@ -44,4 +44,5 @@ export const TOKEN_DECIMALS = {
   [TOKENS.VOTE]: 18,
   [TOKENS.NILLIONS]: 18,
   [TOKENS.PUSSY]: 18,
+  [TOKENS.ZEC]: 8,
 };
