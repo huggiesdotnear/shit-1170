@@ -35,6 +35,7 @@ mdbook serve --open
 mdbook build
 
 # netlify
+# shit-1170
 netlify deploy
 netlify deploy --prod
 ```
