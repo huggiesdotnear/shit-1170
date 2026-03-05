@@ -9,7 +9,7 @@ import App_section_info_links from "./info_components/info_links";
 const App_section_info: FunctionalComponent<{ path?: string }> = () => {
   return (
     <section className="section_info">
-      <h3>shit-1170.meme-cooking.near</h3>
+      <h5>shit-1170.meme-cooking.near</h5>
       <App_section_info_holders />
       <App_section_info_lp />
       <App_section_info_links />
