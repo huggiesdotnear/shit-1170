@@ -10,6 +10,6 @@ section {
     text-align: center;
     border-bottom: 3px solid var(--alt_color_two);
   
-    /*padding: 20px;*/
+    padding: 20px;
     margin: 0px;
   }

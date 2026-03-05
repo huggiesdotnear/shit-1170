@@ -124,7 +124,7 @@ const App_section_info_holders = () => {
           className={`filter-btn ${activeFilter === "all" ? "active" : ""}`}
           onClick={() => handleFilterClick("all")}
         >
-          All
+          ALL
         </button>
         <button
           className={`filter-btn ${activeFilter === "dev" ? "active" : ""}`}
