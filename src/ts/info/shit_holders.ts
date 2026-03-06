@@ -49,6 +49,8 @@ const KNOWN_ACCOUNTS: Record<string, "dev" | "dex" | "vault" | "nft" | "burn"> =
   "hodldogshit.near": "nft",
   "sofo.near": "nft",
   "jeetersnotallowed.near": "nft",
+  "ironclaw.near": "nft",
+  "chicago.near": "nft",
   "burn.sleet.near": "burn",
 };
 

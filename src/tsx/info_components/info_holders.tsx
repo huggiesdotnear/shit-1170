@@ -188,8 +188,10 @@ const App_section_info_holders = () => {
       <p>
         🖼️ these near accounts are available as NFTs on{" "}
         <a href="https://namesky.app/" target="_blank">
-          namesky
-        </a>
+          NAMESKY
+        </a>{" "}
+        <br/>
+        (may or may not have been sold yet)
       </p>
     </div>
   );
