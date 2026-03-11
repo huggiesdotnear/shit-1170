@@ -37,7 +37,7 @@ const KNOWN_ACCOUNTS: Record<string, "dev" | "dex" | "vault" | "nft" | "burn"> =
   "nonresistant.near": "dev",
   "nonresistantreally.tg": "dev",
   "shitbyhuggies.tipbot.intear.near": "dev",
-  "rug-testing.near": "dev",
+  // "rug-testing.near": "dev", i do not own this account
   "frozen_bot2.user.intear.near": "dev",
   "v2.ref-finance.near": "dex",
   "veax.near": "dex",
