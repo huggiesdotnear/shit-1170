@@ -186,12 +186,16 @@ const App_section_info_holders = () => {
         </button>
       </div>
       <p>
-        🖼️ these near accounts are available as NFTs on{" "}
+        🔄 dex accounts
+        <br />
+        🏦 huggies holding accounts
+        <br/>
+        🧑‍💻 all my "dev" accounts for full transparency
+        <br />
+        🖼️ these near accounts are/were available as NFTs on{" "}
         <a href="https://namesky.app/" target="_blank">
           NAMESKY
         </a>{" "}
-        <br/>
-        (may or may not have been sold yet)
       </p>
     </div>
   );
