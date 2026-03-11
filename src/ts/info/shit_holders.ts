@@ -32,13 +32,13 @@ const KNOWN_ACCOUNTS: Record<string, "dev" | "dex" | "vault" | "nft" | "burn"> =
   "growth.huggies.near": "vault",
   "future.huggies.near": "vault",
   "ref.huggies.near": "vault",
+  "shitbyhuggies.tipbot.intear.near": "vault",
   "huggies.near": "vault",
   "sleet_mainnet_test_yes_doxing_myself_sorry_for_rugs.near": "dev",
   "nonresistant.near": "dev",
   "nonresistantreally.tg": "dev",
-  "shitbyhuggies.tipbot.intear.near": "dev",
-  // "rug-testing.near": "dev", i do not own this account
   "frozen_bot2.user.intear.near": "dev",
+  // "rug-testing.near": "dev", i do not own this account
   "v2.ref-finance.near": "dex",
   "veax.near": "dex",
   "dex.intear.near": "dex",
