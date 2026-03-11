@@ -6,7 +6,7 @@ const App_section_info_holders = () => {
   const [holders, setHolders] = useState<ProcessedHolder[]>([]);
   const [filteredHolders, setFilteredHolders] = useState<ProcessedHolder[]>([]);
   const [activeFilter, setActiveFilter] = useState<
-    "all" | "dev" | "dex" | "nft" | "vault" | "burn"
+    "all" | "dev" | "dex" | "nft" | "vault" | "burn" | "holders"
   >("all");
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
@@ -38,6 +38,17 @@ const App_section_info_holders = () => {
   useEffect(() => {
     if (activeFilter === "all") {
       setFilteredHolders(holders);
+    } else if (activeFilter === "holders") {
+      setFilteredHolders(
+        holders.filter(
+          (holder) =>
+            holder.type !== "dev" &&
+            holder.type !== "dex" &&
+            holder.type !== "nft" &&
+            holder.type !== "vault" &&
+            holder.type !== "burn",
+        ),
+      );
     } else {
       setFilteredHolders(
         holders.filter((holder) => holder.type === activeFilter),
@@ -46,7 +57,7 @@ const App_section_info_holders = () => {
   }, [activeFilter, holders]);
 
   const handleFilterClick = (
-    filter: "all" | "dev" | "dex" | "vault" | "nft" | "burn",
+    filter: "all" | "dev" | "dex" | "vault" | "nft" | "burn" | "holders",
   ) => {
     setActiveFilter(filter);
   };
@@ -156,6 +167,12 @@ const App_section_info_holders = () => {
         >
           🔥
         </button>
+        <button
+          className={`filter-btn ${activeFilter === "holders" ? "active" : ""}`}
+          onClick={() => handleFilterClick("holders")}
+        >
+          👤
+        </button>
       </div>
 
       <div className="holders-list">
@@ -187,6 +204,8 @@ const App_section_info_holders = () => {
       </div>
       <p>
         🔄 dex accounts
+        <br />
+        👤 regular holders
         <br />
         🏦 huggies holding accounts
         <br/>
