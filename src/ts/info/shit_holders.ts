@@ -31,6 +31,7 @@ const KNOWN_ACCOUNTS: Record<string, "dev" | "dex" | "vault" | "nft" | "burn"> =
   "vault.huggies.near": "vault",
   "growth.huggies.near": "vault",
   "future.huggies.near": "vault",
+  "diaper.huggies.near": "vault",
   "huggies.sputnik-dao.near": "vault",
   "ref.huggies.near": "vault",
   "shitbyhuggies.tipbot.intear.near": "vault",
