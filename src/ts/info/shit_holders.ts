@@ -35,7 +35,7 @@ const KNOWN_ACCOUNTS: Record<string, "dev" | "dex" | "vault" | "nft" | "burn"> =
   "baby.huggies.near": "vault",
   "huggies.sputnik-dao.near": "vault",
   "ref.huggies.near": "vault",
-  "shitbyhuggies.tipbot.intear.near": "vault",
+  // "shitbyhuggies.tipbot.intear.near": "vault",
   "huggies.near": "vault",
   "sleet_mainnet_test_yes_doxing_myself_sorry_for_rugs.near": "dev",
   "nonresistant.near": "dev",
@@ -46,6 +46,7 @@ const KNOWN_ACCOUNTS: Record<string, "dev" | "dex" | "vault" | "nft" | "burn"> =
   "veax.near": "dex",
   "dex.intear.near": "dex",
   "meme-cooking.near": "dex",
+  // nft
   "notdone.near": "nft",
   "outwit.near": "nft",
   "fediverse.near": "nft",
