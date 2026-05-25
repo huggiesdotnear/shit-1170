@@ -14,6 +14,7 @@ shit-1170.meme-cooking.near web page
 ```sh
 # preact ui
 bun i
+bun update --latest
 bun run dev
 bun run build
 bun run typecheck
