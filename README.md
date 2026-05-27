@@ -1,42 +1,38 @@
-# sv
+# shit-1170.near
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+💩 shit-1170.meme-cooking.near web page
+<br/>
+https://shit-1170.near.page/
+<br/>
+https://shit-1170.netlify.app/
 
-## Creating a project
+---
 
-If you're seeing this, you've probably already done this step. Congrats!
+DEV
 
-```sh
-# create a new project
-npx sv create my-app
+```bash
+bun i
+bun run dev
+bun run build
+bun run preview
+bun run prepare # ??
+bun run check
+bun run format
+bun update --latest
+bun run tsc --noEmit
+
+# netlify
+# shit-1170
+netlify deploy
+netlify deploy --prod
 ```
 
-To recreate this project with the same configuration:
+### LNKS
 
-```sh
-# recreate this project
-bun x sv@0.15.3 create --template minimal --types ts --add prettier --install bun .
-```
+- https://t.me/huggiesdotnear
+- https://huggies.near.social/
+- https://app.rhea.finance/#near|shit-1170.meme-cooking.near
 
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```sh
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```sh
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+===============
+<br/>
+copyright 2026 by sleet.near
