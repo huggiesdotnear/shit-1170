@@ -3,9 +3,10 @@
 <!-- ================================ -->
 <!-- ================================ -->
 
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
-
+<main>
+    <p>shit-1170.meme-cooking.near</p>
+    <p>COPYRIGHT 2026 BY SLEET.NEAR</p>
+</main>
 
 <!-- ================================ -->
 <!-- ================================ -->
