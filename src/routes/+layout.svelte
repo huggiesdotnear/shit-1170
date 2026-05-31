@@ -1,5 +1,5 @@
 <script lang="ts">
-    import "@sleet-css/huggies-css/main.css";
+	import "@sleet-css/huggies-css/main.css";
 	import favicon from "$lib/assets/favicon.svg";
 	let { children } = $props();
 </script>

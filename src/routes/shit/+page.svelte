@@ -1,22 +1,22 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-	import { page } from '$app/stores';
-	import InputCa from '$lib/components/input_ca.svelte';
+	import { onMount } from "svelte";
+	import { page } from "$app/stores";
+	import COMPONENT_INPUT_CA from "$lib/components/input_ca.svelte";
 
 	onMount(() => {
-		console.log($page.url.searchParams.get('token'));
+		console.log($page.url.searchParams.get("token"));
 	});
 
-	let token = $derived($page.url.searchParams.get('token'));
+	let token = $derived($page.url.searchParams.get("token"));
 </script>
 
 <!-- ================================ -->
 <!-- ================================ -->
 
 <main>
-    <InputCa />
-    <h3>{token}</h3>
-    <p>COPYRIGHT 2026 BY SLEET.NEAR</p>
+	<h3>{token}</h3>
+	<COMPONENT_INPUT_CA />
+	<p>COPYRIGHT 2026 BY SLEET.NEAR</p>
 </main>
 
 <!-- ================================ -->
