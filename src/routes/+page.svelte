@@ -8,7 +8,7 @@
 	onMount(() => {
 		setTimeout(() => {
 			goto('/shit?token=shit-1170.meme-cooking.near');
-		}, 3000);
+		}, 1000);
 	});
 </script>
 
