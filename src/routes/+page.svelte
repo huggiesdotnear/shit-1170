@@ -1,6 +1,9 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
 	import { onMount } from 'svelte';
+	import { HUGGIES_SLOGANS } from '$lib/ts/slogans';
+	// ================================
+	const getRandomSlogan = () => HUGGIES_SLOGANS[Math.floor(Math.random() * HUGGIES_SLOGANS.length)];
 	// ================================
 	onMount(() => {
 		setTimeout(() => {
@@ -14,6 +17,7 @@
 
 <section>
     <h1>HUGGIES</h1>
+    <p>{getRandomSlogan()}</p>
 </section>
 
 <!-- ================================ -->
