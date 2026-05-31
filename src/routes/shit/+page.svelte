@@ -15,7 +15,7 @@
 
 <main>
 	<h3>{token}</h3>
-	<COMPONENT_INPUT_CA />
+	<COMPONENT_INPUT_CA placeholder={token ?? ''} />
 	<p>COPYRIGHT 2026 BY SLEET.NEAR</p>
 </main>
 

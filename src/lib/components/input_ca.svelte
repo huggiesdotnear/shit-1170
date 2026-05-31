@@ -1,7 +1,9 @@
 <script lang="ts">
-	import { goto } from "$app/navigation";
+	import { goto } from '$app/navigation';
 
-	let value = $state("");
+	let { placeholder = 'token ca' }: { placeholder?: string } = $props();
+
+	let value = $state('');
 
 	function handleGo() {
 		if (value.trim()) {
@@ -16,9 +18,9 @@
 <!-- component_input_ca -->
 <!-- COMPONENT_INPUT_CA -->
 <div>
-	<input type="text" bind:value placeholder="token ca" />
-	<br />
-	<button onclick={handleGo}>Go</button>
+	<input type="text" bind:value {placeholder} />
+	<br/>
+	<button onclick={handleGo}>GO SHIT</button>
 </div>
 
 <!-- ============================================ -->
