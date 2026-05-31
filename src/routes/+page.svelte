@@ -1,12 +1,17 @@
-<script lang="ts"></script>
+<script lang="ts">
+	import { goto } from '$app/navigation';
+	import { onMount } from 'svelte';
 
-<!-- ================================ -->
-<!-- ================================ -->
+	onMount(() => {
+		setTimeout(() => {
+			goto('/shit?token=shit-1170.meme-cooking.near');
+		}, 3000);
+	});
+</script>
 
-<main>
-    <p>shit-1170.meme-cooking.near</p>
-    <p>COPYRIGHT 2026 BY SLEET.NEAR</p>
-</main>
+<section>
+    <p>huggies</p>
+</section>
 
 <!-- ================================ -->
 <!-- ================================ -->
