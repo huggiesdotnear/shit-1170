@@ -1,7 +1,9 @@
 <script lang="ts">
-  import { ft_metadata_fun } from "@near-kit-tool-box/fun"
-  import type { FT_METADATA_TYPE } from "@near-kit-tool-box/fun"
-  // ============================================
+	import { onMount } from "svelte";
+	import { near_kit_client } from "@near-kit-tool-box/web"
+	import { ft_metadata_fun } from "@near-kit-tool-box/fun";
+	import type { FT_METADATA_TYPE } from "@near-kit-tool-box/fun";
+	// ============================================
 </script>
 
 <!-- ============================================ -->
