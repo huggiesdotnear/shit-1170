@@ -43,7 +43,7 @@
 
 <div class="ft-card">
 	{#if loading}
-		<p class="loading">Loading...</p>
+		<p class="loading">💩💩💩</p>
 	{:else if error}
 		<p class="error">Error: {error}</p>
 	{:else if metadata}
