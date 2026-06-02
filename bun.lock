@@ -5,20 +5,21 @@
     "": {
       "name": "shit-1170",
       "dependencies": {
-        "@near-kit-tool-box/fun": "latest",
-        "@sleet-css/huggies-css": "latest",
+        "@near-kit-tool-box/fun": "^0.0.8",
+        "@near-kit-tool-box/web": "^0.0.8",
+        "@sleet-css/huggies-css": "^0.0.3",
       },
       "devDependencies": {
-        "@sveltejs/adapter-auto": "latest",
-        "@sveltejs/adapter-netlify": "latest",
-        "@sveltejs/kit": "latest",
-        "@sveltejs/vite-plugin-svelte": "latest",
-        "prettier": "latest",
-        "prettier-plugin-svelte": "latest",
-        "svelte": "latest",
-        "svelte-check": "latest",
-        "typescript": "latest",
-        "vite": "latest",
+        "@sveltejs/adapter-auto": "^7.0.1",
+        "@sveltejs/adapter-netlify": "^6.0.4",
+        "@sveltejs/kit": "^2.61.1",
+        "@sveltejs/vite-plugin-svelte": "^7.1.2",
+        "prettier": "^3.8.3",
+        "prettier-plugin-svelte": "^4.1.0",
+        "svelte": "^5.56.1",
+        "svelte-check": "^4.5.0",
+        "typescript": "^6.0.3",
+        "vite": "^8.0.16",
       },
     },
   },
@@ -126,6 +127,8 @@
     "@napi-rs/wasm-runtime": ["@napi-rs/wasm-runtime@1.1.4", "", { "dependencies": { "@tybys/wasm-util": "^0.10.1" }, "peerDependencies": { "@emnapi/core": "^1.7.1", "@emnapi/runtime": "^1.7.1" } }, "sha512-3NQNNgA1YSlJb/kMH1ildASP9HW7/7kYnRI2szWJaofaS1hWmbGI4H+d3+22aGzXXN9IJ+n+GiFVcGipJP18ow=="],
 
     "@near-kit-tool-box/fun": ["@near-kit-tool-box/fun@0.0.8", "", { "dependencies": { "@hot-labs/near-connect": "0.11.4", "@sleet-js/ft-methods-const": "^0.0.7", "@sleet-js/pumpopoly-contract-methods-const": "^0.0.3", "@sleet-js/ref-exchange-methods-const": "^0.0.7", "@sleet-js/staking-pool-contract-methods-const": "^0.0.7", "@sleet-js/wrap-near-contract-methods-const": "^0.0.7", "near-kit": "^0.14.0", "prettier": "^3.8.3", "zod": "^4.4.3" }, "peerDependencies": { "typescript": "^6.0.3" } }, "sha512-wrowFBbyImHpgEml39OmGJq9qA/uvy2Vihk3XOk6OUNYI01askdI+IbJH4ZzI/h4PGoDdrHep8zcbfMEh2ocTQ=="],
+
+    "@near-kit-tool-box/web": ["@near-kit-tool-box/web@0.0.8", "", { "dependencies": { "@hot-labs/near-connect": "0.11.4", "@sleet-js/ft-methods-const": "^0.0.7", "@sleet-js/ref-exchange-methods-const": "^0.0.7", "@sleet-js/wrap-near-contract-methods-const": "^0.0.7", "near-kit": "^0.14.0", "prettier": "^3.8.3", "zod": "^4.4.3" }, "peerDependencies": { "typescript": "^6.0.3" } }, "sha512-iJFtusyj7wblffAQAYmlXwAXbLLNQvzrju/VMYR3dzmehT8aLT84nxF2rzaYvfLvQmcAb502HeZn1jqUCZnVAg=="],
 
     "@noble/curves": ["@noble/curves@2.2.0", "", { "dependencies": { "@noble/hashes": "2.2.0" } }, "sha512-T/BoHgFXirb0ENSPBquzX0rcjXeM6Lo892a2jlYJkqk83LqZx0l1Of7DzlKJ6jkpvMrkHSnAcgb5JegL8SeIkQ=="],
 
