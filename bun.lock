@@ -125,7 +125,7 @@
 
     "@napi-rs/wasm-runtime": ["@napi-rs/wasm-runtime@1.1.4", "", { "dependencies": { "@tybys/wasm-util": "^0.10.1" }, "peerDependencies": { "@emnapi/core": "^1.7.1", "@emnapi/runtime": "^1.7.1" } }, "sha512-3NQNNgA1YSlJb/kMH1ildASP9HW7/7kYnRI2szWJaofaS1hWmbGI4H+d3+22aGzXXN9IJ+n+GiFVcGipJP18ow=="],
 
-    "@near-kit-tool-box/fun": ["@near-kit-tool-box/fun@0.0.7", "", { "dependencies": { "@hot-labs/near-connect": "0.11.4", "@sleet-js/ft-methods-const": "^0.0.7", "@sleet-js/ref-exchange-methods-const": "^0.0.7", "@sleet-js/staking-pool-contract-methods-const": "^0.0.7", "@sleet-js/wrap-near-contract-methods-const": "^0.0.7", "near-kit": "^0.14.0", "prettier": "^3.8.3", "zod": "^4.4.3" }, "peerDependencies": { "typescript": "^6.0.3" } }, "sha512-Nqb1E42BI5i3JfXMrLozx26s+MgCeJThZ6huvB4JmS05XGz8bZPkoj2ifmfcGHBpO/Cm3h/vMyl5D6YarwE2kw=="],
+    "@near-kit-tool-box/fun": ["@near-kit-tool-box/fun@0.0.8", "", { "dependencies": { "@hot-labs/near-connect": "0.11.4", "@sleet-js/ft-methods-const": "^0.0.7", "@sleet-js/pumpopoly-contract-methods-const": "^0.0.3", "@sleet-js/ref-exchange-methods-const": "^0.0.7", "@sleet-js/staking-pool-contract-methods-const": "^0.0.7", "@sleet-js/wrap-near-contract-methods-const": "^0.0.7", "near-kit": "^0.14.0", "prettier": "^3.8.3", "zod": "^4.4.3" }, "peerDependencies": { "typescript": "^6.0.3" } }, "sha512-wrowFBbyImHpgEml39OmGJq9qA/uvy2Vihk3XOk6OUNYI01askdI+IbJH4ZzI/h4PGoDdrHep8zcbfMEh2ocTQ=="],
 
     "@noble/curves": ["@noble/curves@2.2.0", "", { "dependencies": { "@noble/hashes": "2.2.0" } }, "sha512-T/BoHgFXirb0ENSPBquzX0rcjXeM6Lo892a2jlYJkqk83LqZx0l1Of7DzlKJ6jkpvMrkHSnAcgb5JegL8SeIkQ=="],
 
@@ -176,6 +176,8 @@
     "@sleet-css/huggies-css": ["@sleet-css/huggies-css@0.0.3", "", {}, "sha512-JXY7kOhe5LXtpx2/vbnEKSEj07Dgjt2d555F9Qniv5p6v9RL48qbTX3apaHI2hLGHZueHCK8b9m+NIGIM2lIag=="],
 
     "@sleet-js/ft-methods-const": ["@sleet-js/ft-methods-const@0.0.7", "", { "peerDependencies": { "typescript": "^6.0.2" } }, "sha512-IQ+2aHI35Cx/X+fxQY0jZUlnjQPnh354nx/+J4HgTPCa8ODOBGI2ZfdXI0KXKJEvg0zv5I52Oax179/yu+oLkQ=="],
+
+    "@sleet-js/pumpopoly-contract-methods-const": ["@sleet-js/pumpopoly-contract-methods-const@0.0.3", "", { "peerDependencies": { "typescript": "^6.0.3" } }, "sha512-sxfDyI4vkyv03zdoHe9szZVCYJphkfmNPrbofxkUxx+q+p2bzOlBh4DVg5HbqcSAbh7u12L+lZXwdqSuNykOGg=="],
 
     "@sleet-js/ref-exchange-methods-const": ["@sleet-js/ref-exchange-methods-const@0.0.7", "", { "peerDependencies": { "typescript": "^6.0.2" } }, "sha512-BnPJRP0k1jBUzDUJpCfdxiRNiWosEJE2pV0H0MBF1rDhZJwdGoBNC0fO6P7wLutd5Y1cXWcFkloCgY5XHJ+RKQ=="],
 
