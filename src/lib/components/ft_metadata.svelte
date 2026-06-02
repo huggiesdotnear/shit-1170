@@ -7,8 +7,8 @@
 <!-- ============================================ -->
 <!-- ============================================ -->
 
-<!-- component_blank -->
-<!-- COMPONENT_BLANK -->
+<!-- component_ft_metadata -->
+<!-- COMPONENT_FT_METADATA -->
 <div>
 	<h1>BLANK</h1>
 </div>
