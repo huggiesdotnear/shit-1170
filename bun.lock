@@ -5,22 +5,22 @@
     "": {
       "name": "shit-1170",
       "dependencies": {
-        "@near-kit-tool-box/env": "^0.0.8",
-        "@near-kit-tool-box/fun": "^0.0.8",
-        "@near-kit-tool-box/web": "^0.0.8",
-        "@sleet-css/huggies-css": "^0.0.3",
+        "@near-kit-tool-box/env": "latest",
+        "@near-kit-tool-box/fun": "latest",
+        "@near-kit-tool-box/web": "latest",
+        "@sleet-css/huggies-css": "latest",
       },
       "devDependencies": {
-        "@sveltejs/adapter-auto": "^7.0.1",
-        "@sveltejs/adapter-netlify": "^6.0.4",
-        "@sveltejs/kit": "^2.61.1",
-        "@sveltejs/vite-plugin-svelte": "^7.1.2",
-        "prettier": "^3.8.3",
-        "prettier-plugin-svelte": "^4.1.0",
-        "svelte": "^5.56.1",
-        "svelte-check": "^4.5.0",
-        "typescript": "^6.0.3",
-        "vite": "^8.0.16",
+        "@sveltejs/adapter-auto": "latest",
+        "@sveltejs/adapter-netlify": "latest",
+        "@sveltejs/kit": "latest",
+        "@sveltejs/vite-plugin-svelte": "latest",
+        "prettier": "latest",
+        "prettier-plugin-svelte": "latest",
+        "svelte": "latest",
+        "svelte-check": "latest",
+        "typescript": "latest",
+        "vite": "latest",
       },
     },
   },
@@ -129,7 +129,7 @@
 
     "@near-kit-tool-box/env": ["@near-kit-tool-box/env@0.0.8", "", { "dependencies": { "@sleet-js/ft-methods-const": "^0.0.7", "@sleet-js/ref-exchange-methods-const": "^0.0.7", "@sleet-js/wrap-near-contract-methods-const": "^0.0.7", "dotenv": "^17.4.2", "near-kit": "^0.14.0", "prettier": "^3.8.3", "zod": "^4.4.3" }, "peerDependencies": { "typescript": "^6.0.3" } }, "sha512-sl86SDBdTjv9F1SiQ/iLjaRlVeQuxEjkLwRVZAk4kPHrIvS31DEU54dooIZZXPzbjYEEzZBYN1f0xreVblMizw=="],
 
-    "@near-kit-tool-box/fun": ["@near-kit-tool-box/fun@0.0.8", "", { "dependencies": { "@hot-labs/near-connect": "0.11.4", "@sleet-js/ft-methods-const": "^0.0.7", "@sleet-js/pumpopoly-contract-methods-const": "^0.0.3", "@sleet-js/ref-exchange-methods-const": "^0.0.7", "@sleet-js/staking-pool-contract-methods-const": "^0.0.7", "@sleet-js/wrap-near-contract-methods-const": "^0.0.7", "near-kit": "^0.14.0", "prettier": "^3.8.3", "zod": "^4.4.3" }, "peerDependencies": { "typescript": "^6.0.3" } }, "sha512-wrowFBbyImHpgEml39OmGJq9qA/uvy2Vihk3XOk6OUNYI01askdI+IbJH4ZzI/h4PGoDdrHep8zcbfMEh2ocTQ=="],
+    "@near-kit-tool-box/fun": ["@near-kit-tool-box/fun@0.0.9", "", { "dependencies": { "@hot-labs/near-connect": "0.11.4", "@sleet-js/ft-methods-const": "^0.0.7", "@sleet-js/pumpopoly-contract-methods-const": "^0.0.3", "@sleet-js/ref-exchange-methods-const": "^0.0.7", "@sleet-js/staking-pool-contract-methods-const": "^0.0.7", "@sleet-js/wrap-near-contract-methods-const": "^0.0.7", "near-kit": "^0.14.0", "prettier": "^3.8.3", "zod": "^4.4.3" }, "peerDependencies": { "typescript": "^6.0.3" } }, "sha512-GmQ/8DqX9v1DOFwdovX/cdGDoQvv8nDEAAxyNcNfxM42nDMhFSmHct/SOh8Z7pVnh+dHmc/MIXHzeH2dV2W3hQ=="],
 
     "@near-kit-tool-box/web": ["@near-kit-tool-box/web@0.0.8", "", { "dependencies": { "@hot-labs/near-connect": "0.11.4", "@sleet-js/ft-methods-const": "^0.0.7", "@sleet-js/ref-exchange-methods-const": "^0.0.7", "@sleet-js/wrap-near-contract-methods-const": "^0.0.7", "near-kit": "^0.14.0", "prettier": "^3.8.3", "zod": "^4.4.3" }, "peerDependencies": { "typescript": "^6.0.3" } }, "sha512-iJFtusyj7wblffAQAYmlXwAXbLLNQvzrju/VMYR3dzmehT8aLT84nxF2rzaYvfLvQmcAb502HeZn1jqUCZnVAg=="],
 
