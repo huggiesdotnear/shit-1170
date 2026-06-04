@@ -52,7 +52,7 @@
 		<p class="ft-detail">PRICE USD: {info.price_usd}</p>
 		<p class="ft-detail">TOTAL SUPPLY: {info.total_supply}</p>
 		<p class="ft-detail">CIRCULATING SUPPLY: {info.circulating_supply}</p>
-		<p class="ft-detail">LIQUIDITY USD: {format_number_with_commas(info.liquidity_usd)}</p>
+		<p class="ft-detail">LIQUIDITY USD: ${format_number_with_commas(info.liquidity_usd)}</p>
 		<!-- <p class="ft-detail">VOLUME 24H: {info.volume_usd_24h}</p> -->
 	{/if}
 </div>
