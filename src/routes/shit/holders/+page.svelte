@@ -141,13 +141,6 @@
 					</div>
 				{/each}
 			</div>
-			{#if get_group_totals()}
-				{@const totalPct = Object.values(get_group_totals()!).reduce((acc, g) => acc + parseFloat(get_percentage(g.balance)), 0).toFixed(2) + "%"}
-				<div class="total-row">
-					<span class="group-label">TOP 100</span>
-					<span class="group-pct">{totalPct}</span>
-				</div>
-			{/if}
 		</div>
 
 		<div class="holders-card">
@@ -250,6 +243,7 @@
 	.group-totals h2 {
 		font-size: 1rem;
 		margin: 0 0 12px 0;
+		color: #333;
 	}
 	.group-grid {
 		display: grid;
@@ -272,18 +266,6 @@
 	.group-item.active-group .group-label,
 	.group-item.active-group .group-pct,
 	.group-item.active-group .group-count {
-		color: #fff;
-	}
-	.total-row {
-		background: #333;
-		color: #fff;
-		grid-column: 1 / -1;
-		justify-content: center;
-		font-weight: 700;
-		margin-top: 4px;
-	}
-	.total-row .group-label,
-	.total-row .group-pct {
 		color: #fff;
 	}
 	.group-emoji {
