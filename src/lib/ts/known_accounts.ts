@@ -1,7 +1,15 @@
 // ============================================
+export const HOLDER_EMOJI = {
+  dev: "🧑‍💻",
+  dex: "🔄",
+  vault: "🏦",
+  nft: "🖼️",
+  burn: "🔥",
+} as const;
+export type HOLDER_TYPE = keyof typeof HOLDER_EMOJI;
 // ============================================
 // Known accounts
-const KNOWN_ACCOUNTS: Record<string, "dev" | "dex" | "vault" | "nft" | "burn"> = {
+export const KNOWN_ACCOUNTS: Record<string, "dev" | "dex" | "vault" | "nft" | "burn"> = {
 	"sleet.near": "dev",
 	"vault.huggies.near": "vault",
 	"growth.huggies.near": "vault",
