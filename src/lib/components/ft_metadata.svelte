@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { onMount } from "svelte";
 	import { near_kit_client } from "@near-kit-tool-box/web";
 	import { ft_metadata_fun, ft_total_supply_fun } from "@near-kit-tool-box/fun";
 	import type { FT_METADATA_TYPE } from "@near-kit-tool-box/fun";
@@ -14,24 +13,30 @@
 	let loading = $state(true);
 	let error = $state<string | null>(null);
 	// ============================================
-	onMount(async () => {
+	$effect(() => {
 		if (!token) {
 			loading = false;
+			metadata = null;
+			totalSupply = null;
 			return;
 		}
-		try {
-			const near = near_kit_client();
-			const [metadataResult, supplyResult] = await Promise.all([
-				await ft_metadata_fun(near, token),
-				await ft_total_supply_fun(near, token)
-			]);
-			metadata = metadataResult;
-			totalSupply = supplyResult;
-		} catch (e) {
-			error = e instanceof Error ? e.message : "Failed to fetch metadata";
-		} finally {
-			loading = false;
-		}
+		loading = true;
+		error = null;
+		(async () => {
+			try {
+				const near = near_kit_client();
+				const [metadataResult, supplyResult] = await Promise.all([
+					await ft_metadata_fun(near, token),
+					await ft_total_supply_fun(near, token)
+				]);
+				metadata = metadataResult;
+				totalSupply = supplyResult;
+			} catch (e) {
+				error = e instanceof Error ? e.message : "Failed to fetch metadata";
+			} finally {
+				loading = false;
+			}
+		})();
 	});
 	// ============================================
 </script>
