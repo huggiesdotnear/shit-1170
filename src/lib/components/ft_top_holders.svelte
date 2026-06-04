@@ -1,12 +1,15 @@
 <script lang="ts">
 	import { top_holders_fun } from "$lib/ts/top_holders_fun";
+	import type { FULL_TOKEN_INFO_RESPONSE } from "$lib/ts/full_token_info_fun";
+	import type { TOP_HOLDERS_RESPONSE } from "$lib/ts/top_holders_fun";
 	// ============================================
 	interface PROPS {
 		token: string;
+		tokenInfo: FULL_TOKEN_INFO_RESPONSE | null;
 	}
 	// ============================================
-	let { token }: PROPS = $props();
-	let info: Awaited<ReturnType<typeof top_holders_fun>> | null = $state(null);
+	let { token, tokenInfo }: PROPS = $props();
+	let info: TOP_HOLDERS_RESPONSE | null = $state(null);
 	let loading = $state(true);
 	let error = $state<string | null>(null);
 	// ============================================
@@ -29,6 +32,30 @@
 		})();
 	});
 	// ============================================
+	function format_balance(balance: string, decimals: number): string {
+		const value = parseFloat(balance) / Math.pow(10, decimals);
+		if (value >= 1_000_000_000) return (value / 1_000_000_000).toFixed(2) + "B";
+		if (value >= 1_000_000) return (value / 1_000_000).toFixed(2) + "M";
+		if (value >= 1_000) return (value / 1_000).toFixed(2) + "K";
+		return value.toFixed(2);
+	}
+	// ============================================
+	function get_usd_value(balance: string, decimals: number, price_usd: string): string {
+		const value = parseFloat(balance) / Math.pow(10, decimals);
+		const usd = value * parseFloat(price_usd);
+		if (usd >= 1_000_000_000) return "$" + (usd / 1_000_000_000).toFixed(2) + "B";
+		if (usd >= 1_000_000) return "$" + (usd / 1_000_000).toFixed(2) + "M";
+		if (usd >= 1_000) return "$" + (usd / 1_000).toFixed(2) + "K";
+		if (usd >= 1) return "$" + usd.toFixed(2);
+		return "$" + usd.toFixed(4);
+	}
+	// ============================================
+	function get_percentage(balance: string, decimals: number, total_supply: string): string {
+		const holder = parseFloat(balance) / Math.pow(10, decimals);
+		const total = parseFloat(total_supply) / Math.pow(10, decimals);
+		return ((holder / total) * 100).toFixed(2) + "%";
+	}
+	// ============================================
 </script>
 
 <!-- ============================================ -->
@@ -39,17 +66,24 @@
 		<p class="loading">💩💩💩</p>
 	{:else if error}
 		<p class="error">Error: {error}</p>
-	{:else if info}
+	{:else if info && tokenInfo}
 		<h1 class="th-title">Top {info.accounts.length} Holders</h1>
-		<p class="th-total">Token: {info.token_id}</p>
+		<div class="th-header-row">
+			<span class="th-col-account">ACCOUNT</span>
+			<span class="th-col-balance">BALANCE</span>
+		</div>
 		<ul class="th-list">
 			{#each info.accounts as holder}
 				<li class="th-item">
-					<span class="th-account">{holder.account_id}</span>
-					<span class="th-balance">{holder.balance}</span>
+					<span class="th-account" title={holder.account_id}>{holder.account_id}</span>
+					<span class="th-balance">
+						{format_balance(holder.balance, tokenInfo.metadata.decimals)}&nbsp;({get_usd_value(holder.balance, tokenInfo.metadata.decimals, tokenInfo.price_usd)})&nbsp;{get_percentage(holder.balance, tokenInfo.metadata.decimals, tokenInfo.total_supply)}
+					</span>
 				</li>
 			{/each}
 		</ul>
+	{:else}
+		<p class="loading">Loading holders...</p>
 	{/if}
 </div>
 
@@ -78,13 +112,26 @@
 	.th-title {
 		font-size: 1.25rem;
 		font-weight: 600;
-		margin: 0 0 8px 0;
+		margin: 0 0 16px 0;
 	}
 
-	.th-total {
-		margin: 0 0 16px 0;
-		font-size: 0.9rem;
+	.th-header-row {
+		display: flex;
+		justify-content: space-between;
+		padding: 8px 0;
+		border-bottom: 2px solid #e0e0e0;
+		font-weight: 600;
+		font-size: 0.8rem;
 		color: #666;
+		text-transform: uppercase;
+	}
+
+	.th-col-account {
+		flex: 1;
+	}
+
+	.th-col-balance {
+		text-align: right;
 	}
 
 	.th-list {
@@ -106,11 +153,17 @@
 	.th-account {
 		word-break: break-all;
 		flex: 1;
+		min-width: 0;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		margin-right: 12px;
 	}
 
 	.th-balance {
-		margin-left: 12px;
 		white-space: nowrap;
+		text-align: right;
+		font-variant-numeric: tabular-nums;
 	}
 
 	.loading,
