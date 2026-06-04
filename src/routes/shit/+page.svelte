@@ -18,7 +18,7 @@
 
 <main>
 	<h3>{token}</h3>
-	<COMPONENT_INPUT_CA placeholder={token ?? ''} />
+	<COMPONENT_INPUT_CA placeholder={token ?? ""} />
 	{#if token}
 		<COMPONENT_FT_METADATA {token} />
 	{/if}

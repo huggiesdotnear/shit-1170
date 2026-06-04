@@ -4,28 +4,26 @@
 	import { ft_metadata_fun, ft_total_supply_fun } from "@near-kit-tool-box/fun";
 	import type { FT_METADATA_TYPE } from "@near-kit-tool-box/fun";
 	// ============================================
-
-	interface Props {
+	interface PROPS {
 		token: string;
 	}
-
-	let { token }: Props = $props();
-
+	// ============================================
+	let { token }: PROPS = $props();
 	let metadata: FT_METADATA_TYPE | null = $state(null);
 	let totalSupply: string | null = $state(null);
 	let loading = $state(true);
 	let error = $state<string | null>(null);
-
+	// ============================================
 	onMount(async () => {
 		if (!token) {
 			loading = false;
 			return;
 		}
 		try {
-			const near = await near_kit_client();
+			const near = near_kit_client();
 			const [metadataResult, supplyResult] = await Promise.all([
-				ft_metadata_fun(near, token),
-				ft_total_supply_fun(near, token, "alice.near")
+				await ft_metadata_fun(near, token),
+				await ft_total_supply_fun(near, token)
 			]);
 			metadata = metadataResult;
 			totalSupply = supplyResult;
@@ -76,7 +74,10 @@
 		background: #fff;
 		color: #333;
 		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-		font-family: system-ui, -apple-system, sans-serif;
+		font-family:
+			system-ui,
+			-apple-system,
+			sans-serif;
 	}
 
 	.ft-header {
