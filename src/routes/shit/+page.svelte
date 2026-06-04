@@ -2,6 +2,7 @@
 	import { page } from "$app/stores";
 	import COMPONENT_INPUT_CA from "$lib/components/input_ca.svelte";
 	import COMPONENT_FT_FULL_TOKEN_INFO from "$lib/components/ft_full_token_info.svelte";
+	import COMPONENT_FT_TOP_HOLDERS from "$lib/components/ft_top_holders.svelte";
 	// ================================
 	$effect(() => {
 		console.log("================================");
@@ -20,6 +21,7 @@
 	<COMPONENT_INPUT_CA placeholder={token ?? ""} />
 	{#if token}
 		<COMPONENT_FT_FULL_TOKEN_INFO {token} />
+		<COMPONENT_FT_TOP_HOLDERS {token} />
 	{/if}
 	<p>COPYRIGHT 2026 BY SLEET.NEAR</p>
 </main>
