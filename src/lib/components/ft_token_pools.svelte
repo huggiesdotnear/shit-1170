@@ -143,18 +143,18 @@
 						</div>
 						<div class="pool-tokens">
 							<div class="token-row">
-								<span class="token-label" title={token}>{token.split(".")[0]}</span>
+								<span class="token-label" title={token}>{token}</span>
 								<span class="token-amt">{format_amount(item.token_amount, tokenInfo?.metadata.decimals ?? 24)}</span>
 								<span class="token-val">{format_value(item.token_value_usd)}</span>
 							</div>
 							<div class="token-row">
-								<span class="token-label" title={item.pair_token}>{item.pair_token.split(".")[0]}</span>
+								<span class="token-label" title={item.pair_token}>{item.pair_token}</span>
 								<span class="token-amt">{format_amount(item.pair_amount, item.pair_info?.decimals ?? 24)}</span>
 								<span class="token-val">{format_value(item.pair_value_usd)}</span>
 							</div>
 						</div>
 						<div class="pool-stat">
-							<span class="stat-label">% of {token.split(".")[0]} Supply</span>
+							<span class="stat-label">% of {token} Supply</span>
 							<span class="stat-value">{item.token_percentage.toFixed(4)}%</span>
 						</div>
 					</div>
@@ -183,7 +183,7 @@
 		font-size: 1.25rem;
 		font-weight: 600;
 		margin: 0 0 16px 0;
-		color: #333;
+		/*color: #333;*/
 	}
 
 	.pools-grid {
@@ -304,9 +304,7 @@
 		color: #666;
 		flex: 1;
 		min-width: 0;
-		overflow: hidden;
-		text-overflow: ellipsis;
-		white-space: nowrap;
+		word-break: break-all;
 		margin-right: 8px;
 	}
 
@@ -317,6 +315,7 @@
 		font-variant-numeric: tabular-nums;
 		text-align: right;
 		margin-right: 12px;
+		white-space: nowrap;
 	}
 
 	.token-val {
