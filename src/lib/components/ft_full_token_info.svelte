@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { format_number_with_commas } from "$lib/ts/format_number_with_commas"
-	import { format_price_usd } from "$lib/ts/format_price_usd"
+	import { format_number_with_commas } from "$lib/ts/format_number_with_commas";
+	import { format_price_usd } from "$lib/ts/format_price_usd";
 	import type { FULL_TOKEN_INFO_RESPONSE } from "$lib/ts/full_token_info_fun";
 	// ============================================
 	interface PROPS {

@@ -24,8 +24,8 @@
 		(async () => {
 			try {
 				tokenInfo = await full_token_info_fun(token);
-				console.log("======= full_token_info =======")
-				console.log($state.snapshot(tokenInfo))
+				console.log("======= full_token_info =======");
+				console.log($state.snapshot(tokenInfo));
 			} catch (e) {
 				console.error(e);
 			} finally {
@@ -42,9 +42,11 @@
 <main>
 	<h3>{token}</h3>
 	<COMPONENT_INPUT_CA placeholder={token ?? ""} />
+	<br />
 	<COMPONENT_FT_FULL_TOKEN_INFO info={tokenInfo} {loading} />
+	<br />
 	{#if tokenInfo}
-		<COMPONENT_FT_TOP_HOLDERS token={token ?? ""} tokenInfo={tokenInfo} />
+		<COMPONENT_FT_TOP_HOLDERS token={token ?? ""} {tokenInfo} />
 	{/if}
 	<p>COPYRIGHT 2026 BY SLEET.NEAR</p>
 </main>

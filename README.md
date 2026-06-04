@@ -20,6 +20,7 @@ bun run check
 bun run format
 bun update --latest
 bun run tsc --noEmit
+bunx prettier . --write
 
 # netlify
 # shit-1170
