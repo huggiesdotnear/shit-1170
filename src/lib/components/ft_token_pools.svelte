@@ -89,6 +89,8 @@
 				}
 				pools_with_value.sort((a, b) => b.total_lp_value_usd - a.total_lp_value_usd);
 				POOLS_DATA_LET = pools_with_value;
+				console.log("======= POOLS_DATA_LET =======");
+				console.log($state.snapshot(POOLS_DATA_LET));
 			} catch (e) {
 				POOLS_ERROR_LET = e instanceof Error ? e.message : "Failed to fetch pools";
 			} finally {
