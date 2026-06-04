@@ -6,8 +6,9 @@
 	let value = $state("");
 
 	function handleGo() {
-		if (value.trim()) {
-			goto(`/shit?token=${encodeURIComponent(value.trim())}`);
+		const trimmed = value.trim();
+		if (trimmed && trimmed.endsWith(".near")) {
+			goto(`/shit?token=${encodeURIComponent(trimmed)}`);
 		}
 	}
 </script>
