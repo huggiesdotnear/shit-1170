@@ -25,7 +25,7 @@
 			try {
 				tokenInfo = await full_token_info_fun(token);
 				console.log("======= full_token_info =======")
-				console.log(tokenInfo)
+				console.log($state.snapshot(tokenInfo))
 			} catch (e) {
 				console.error(e);
 			} finally {

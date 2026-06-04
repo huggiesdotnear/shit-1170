@@ -77,7 +77,15 @@
 				<li class="th-item">
 					<span class="th-account" title={holder.account_id}>{holder.account_id}</span>
 					<span class="th-balance">
-						{format_balance(holder.balance, tokenInfo.metadata.decimals)}&nbsp;({get_usd_value(holder.balance, tokenInfo.metadata.decimals, tokenInfo.price_usd)})&nbsp;{get_percentage(holder.balance, tokenInfo.metadata.decimals, tokenInfo.total_supply)}
+						{format_balance(holder.balance, tokenInfo.metadata.decimals)}&nbsp;({get_usd_value(
+							holder.balance,
+							tokenInfo.metadata.decimals,
+							tokenInfo.price_usd
+						)})&nbsp;{get_percentage(
+							holder.balance,
+							tokenInfo.metadata.decimals,
+							tokenInfo.total_supply
+						)}
 					</span>
 				</li>
 			{/each}
@@ -92,6 +100,7 @@
 
 <style>
 	.th-card {
+		margin-top: 10px;
 		border: 1px solid #e0e0e0;
 		border-radius: 3px;
 		padding: 24px;
