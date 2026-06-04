@@ -4,7 +4,9 @@
 	import COMPONENT_FT_FULL_TOKEN_INFO from "$lib/components/ft_full_token_info.svelte";
 	// ================================
 	$effect(() => {
+		console.log("================================");
 		console.log($page.url.searchParams.get("token"));
+		console.log("================================");
 	});
 	let token = $derived($page.url.searchParams.get("token"));
 	// ================================
