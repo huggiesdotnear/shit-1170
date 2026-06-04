@@ -1,16 +1,13 @@
 <script lang="ts">
-	import { onMount } from "svelte";
 	import { page } from "$app/stores";
 	import COMPONENT_INPUT_CA from "$lib/components/input_ca.svelte";
 	import COMPONENT_FT_FULL_TOKEN_INFO from "$lib/components/ft_full_token_info.svelte";
-	// ===========
-
-	onMount(() => {
+	// ================================
+	$effect(() => {
 		console.log($page.url.searchParams.get("token"));
 	});
-
 	let token = $derived($page.url.searchParams.get("token"));
-	// ===========
+	// ================================
 </script>
 
 <!-- ================================ -->
