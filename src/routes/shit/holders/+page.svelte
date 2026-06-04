@@ -285,6 +285,10 @@
 	.group-label {
 		font-weight: 600;
 		color: #666;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		max-width: 70px;
 	}
 	.group-pct {
 		margin-left: auto;
