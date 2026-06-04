@@ -24,6 +24,8 @@
 		(async () => {
 			try {
 				info = await top_holders_fun(token);
+				console.log("======= top 100 holders =======");
+				console.log($state.snapshot(info));
 			} catch (e) {
 				error = e instanceof Error ? e.message : "Failed to fetch top holders";
 			} finally {
