@@ -56,7 +56,7 @@
 			{/if}
 			<h1 class="ft-name">{metadata.name}</h1>
 		</div>
-		<p class="ft-detail">SYMBOL: {metadata.symbol}</p>
+		<p class="ft-detail">SYMBOL: ${metadata.symbol}</p>
 		<p class="ft-detail">CA: {token}</p>
 		<p class="ft-detail">DECIMALS: {metadata.decimals}</p>
 		<p class="ft-detail">TOTAL SUPPLY: {totalSupply}</p>
