@@ -1,36 +1,15 @@
 <script lang="ts">
-	import { full_token_info_fun } from "$lib/ts/full_token_info_fun";
 	import { format_number_with_commas } from "$lib/ts/format_number_with_commas"
 	import { format_price_usd } from "$lib/ts/format_price_usd"
 	import type { FULL_TOKEN_INFO_RESPONSE } from "$lib/ts/full_token_info_fun";
 	// ============================================
 	interface PROPS {
-		token: string;
+		info: FULL_TOKEN_INFO_RESPONSE | null;
+		loading?: boolean;
+		error?: string | null;
 	}
 	// ============================================
-	let { token }: PROPS = $props();
-	let info: FULL_TOKEN_INFO_RESPONSE | null = $state(null);
-	let loading = $state(true);
-	let error = $state<string | null>(null);
-	// ============================================
-	$effect(() => {
-		if (!token) {
-			loading = false;
-			info = null;
-			return;
-		}
-		loading = true;
-		error = null;
-		(async () => {
-			try {
-				info = await full_token_info_fun(token);
-			} catch (e) {
-				error = e instanceof Error ? e.message : "Failed to fetch token info";
-			} finally {
-				loading = false;
-			}
-		})();
-	});
+	let { info, loading = false, error = null }: PROPS = $props();
 	// ============================================
 </script>
 

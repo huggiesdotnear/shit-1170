@@ -13,14 +13,22 @@
 	});
 	let token = $derived($page.url.searchParams.get("token"));
 	let tokenInfo: FULL_TOKEN_INFO_RESPONSE | null = $state(null);
+	let loading = $state(false);
 	// ================================
 	$effect(() => {
 		if (!token) {
 			tokenInfo = null;
 			return;
 		}
+		loading = true;
 		(async () => {
-			tokenInfo = await full_token_info_fun(token);
+			try {
+				tokenInfo = await full_token_info_fun(token);
+			} catch (e) {
+				console.error(e);
+			} finally {
+				loading = false;
+			}
 		})();
 	});
 	// ================================
@@ -32,9 +40,9 @@
 <main>
 	<h3>{token}</h3>
 	<COMPONENT_INPUT_CA placeholder={token ?? ""} />
-	{#if token}
-		<COMPONENT_FT_FULL_TOKEN_INFO {token} />
-		<COMPONENT_FT_TOP_HOLDERS {token} tokenInfo={tokenInfo} />
+	<COMPONENT_FT_FULL_TOKEN_INFO info={tokenInfo} {loading} />
+	{#if tokenInfo}
+		<COMPONENT_FT_TOP_HOLDERS token={token ?? ""} tokenInfo={tokenInfo} />
 	{/if}
 	<p>COPYRIGHT 2026 BY SLEET.NEAR</p>
 </main>
