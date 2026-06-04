@@ -3,6 +3,7 @@
 	import COMPONENT_INPUT_CA from "$lib/components/input_ca.svelte";
 	import COMPONENT_FT_FULL_TOKEN_INFO from "$lib/components/ft_full_token_info.svelte";
 	import COMPONENT_FT_TOP_HOLDERS from "$lib/components/ft_top_holders.svelte";
+	import COMPONENT_FT_TOKEN_POOLS from "$lib/components/ft_token_pools.svelte";
 	import { full_token_info_fun } from "$lib/ts/full_token_info_fun";
 	import type { FULL_TOKEN_INFO_RESPONSE } from "$lib/ts/full_token_info_fun";
 	// ================================
@@ -55,7 +56,8 @@
 	<COMPONENT_FT_TOP_HOLDERS token={token ?? ""} tokenInfo={FULL_TOKEN_INFO_RESPONSE_STATE_LET} />
 	<!-- {/if} -->
 	<!-- ================================ -->
-	<!-- <div><h5>POOLS</h5></div> -->
+	<div><h5>POOLS</h5></div>
+	<COMPONENT_FT_TOKEN_POOLS token={token ?? ""} tokenInfo={FULL_TOKEN_INFO_RESPONSE_STATE_LET} />
 	<!-- ================================ -->
 	<p>COPYRIGHT 2026 BY SLEET.NEAR</p>
 </main>
