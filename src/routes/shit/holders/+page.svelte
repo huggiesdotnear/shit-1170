@@ -129,7 +129,7 @@
 		</div>
 
 		<div class="group-totals">
-			<h2>Group Holdings</h2>
+			<h2>GROUP HOLDINGS</h2>
 			<div class="group-grid">
 				{#each Object.entries(get_group_totals() || {}) as [type, data]}
 					{@const pct = get_percentage(data.balance)}
@@ -145,7 +145,7 @@
 
 		<div class="holders-card">
 			<h2 class="holders-title">
-				Top {HOLDERS_DATA_LET.accounts.length} Holders
+				TOP {HOLDERS_DATA_LET.accounts.length} HOLDERS
 				{#if ACTIVE_TAB_LET !== "all"}
 					<span class="filtered-note">
 						- Filtered: {HOLDER_EMOJI_WITH_REGULAR[ACTIVE_TAB_LET as HOLDER_TYPE]}
@@ -178,6 +178,9 @@
 	{:else}
 		<p class="loading">💩💩💩</p>
 	{/if}
+	<!-- ================================ -->
+	<a href="/shit"><button>🔙 BACK</button></a>
+	<p>COPYRIGHT 2026 BY SLEET.NEAR</p>
 </main>
 
 <!-- ================================ -->
@@ -185,11 +188,10 @@
 
 <style>
 	main {
-		padding: 20px;
-		max-width: 500px;
+		padding: 0px;
+		width: 500px;
 		margin: 0 auto;
 		font-family: system-ui, -apple-system, sans-serif;
-		width: 500px;
 		max-width: 90vw;
 		box-sizing: border-box;
 	}
@@ -234,11 +236,29 @@
 		background: #333;
 		color: #fff;
 	}
-	.group-totals {
-		margin-bottom: 20px;
+.group-totals {
 		padding: 16px;
 		background: #f8f8f8;
 		border-radius: 8px;
+		margin-bottom: 20px;
+	}
+	.group-item,
+	.holders-card {
+		background: #fff;
+	}
+	.group-item {
+		display: flex;
+		align-items: center;
+		gap: 6px;
+		padding: 8px 12px;
+		border-radius: 6px;
+		font-size: 0.85rem;
+	}
+	.holders-card {
+		border: 1px solid #e0e0e0;
+		border-radius: 8px;
+		padding: 20px;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 	}
 	.group-totals h2 {
 		font-size: 1rem;
@@ -249,15 +269,6 @@
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
 		gap: 8px;
-	}
-	.group-item {
-		display: flex;
-		align-items: center;
-		gap: 6px;
-		padding: 8px 12px;
-		background: #fff;
-		border-radius: 6px;
-		font-size: 0.85rem;
 	}
 	.group-item.active-group {
 		background: #333;
@@ -284,18 +295,18 @@
 		color: #999;
 		font-size: 0.8rem;
 	}
-	.holders-card {
-		background: #fff;
-		border: 1px solid #e0e0e0;
-		border-radius: 8px;
-		padding: 20px;
-		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+	.holders-title,
+	.group-totals h2 {
+		font-weight: 600;
+		color: #333;
 	}
 	.holders-title {
 		font-size: 1.1rem;
-		font-weight: 600;
 		margin: 0 0 16px 0;
-		color: #333;
+	}
+	.group-totals h2 {
+		font-size: 1rem;
+		margin: 0 0 12px 0;
 	}
 	.filtered-note {
 		font-weight: 400;
@@ -328,16 +339,20 @@
 	.holder-item:last-child {
 		border-bottom: none;
 	}
+	.col-rank,
+	.col-account,
+	.col-balance {
+		display: flex;
+		align-items: center;
+	}
 	.col-rank {
 		width: 40px;
 		color: #999;
 	}
 	.col-account {
 		flex: 1;
-		display: flex;
-		align-items: center;
-		gap: 8px;
 		min-width: 0;
+		gap: 8px;
 	}
 	.holder-emoji {
 		flex-shrink: 0;
@@ -349,9 +364,7 @@
 		color: #333;
 	}
 	.col-balance {
-		display: flex;
 		gap: 12px;
-		align-items: center;
 		white-space: nowrap;
 	}
 	.balance-token {
