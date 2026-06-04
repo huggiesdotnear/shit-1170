@@ -54,7 +54,9 @@
 	<div><h5>HOLDERS</h5></div>
 	<COMPONENT_FT_TOP_HOLDERS token={token ?? ""} tokenInfo={FULL_TOKEN_INFO_RESPONSE_STATE_LET} />
 	<br/>
-	<a href="/shit/holders"><button>SHIT HOLDERS</button></a>
+	{#if token === "shit-1170.meme-cooking.near"}
+		<a href="/shit/holders"><button>SHIT HOLDERS</button></a>
+	{/if}
 	<br/>
 	<!-- ================================ -->
 	<!-- POOLS -->
