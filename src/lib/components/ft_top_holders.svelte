@@ -9,27 +9,27 @@
 	}
 	// ============================================
 	let { token, tokenInfo }: PROPS = $props();
-	let info: TOP_HOLDERS_RESPONSE | null = $state(null);
-	let loading = $state(true);
-	let error = $state<string | null>(null);
+	let TOP_100_HOLDERS_LET: TOP_HOLDERS_RESPONSE | null = $state(null);
+	let TOP_100_HOLDERS_LOADING_LET = $state(true);
+	let TOP_100_HOLDERS_ERROR_LET = $state<string | null>(null);
 	// ============================================
 	$effect(() => {
 		if (!token) {
-			loading = false;
-			info = null;
+			TOP_100_HOLDERS_LOADING_LET = false;
+			TOP_100_HOLDERS_LET = null;
 			return;
 		}
-		loading = true;
-		error = null;
+		TOP_100_HOLDERS_LOADING_LET = true;
+		TOP_100_HOLDERS_ERROR_LET = null;
 		(async () => {
 			try {
-				info = await top_holders_fun(token);
-				console.log("======= top 100 holders =======");
-				console.log($state.snapshot(info));
+				TOP_100_HOLDERS_LET = await top_holders_fun(token);
+				console.log("======= TOP_100_HOLDERS_LET =======");
+				console.log($state.snapshot(TOP_100_HOLDERS_LET));
 			} catch (e) {
-				error = e instanceof Error ? e.message : "Failed to fetch top holders";
+				TOP_100_HOLDERS_ERROR_LET = e instanceof Error ? e.message : "Failed to fetch top holders";
 			} finally {
-				loading = false;
+				TOP_100_HOLDERS_LOADING_LET = false;
 			}
 		})();
 	});
@@ -64,18 +64,18 @@
 <!-- ============================================ -->
 
 <div class="th-card">
-	{#if loading}
+	{#if TOP_100_HOLDERS_LOADING_LET}
 		<p class="loading">💩💩💩</p>
-	{:else if error}
-		<p class="error">Error: {error}</p>
-	{:else if info && tokenInfo}
-		<h1 class="th-title">Top {info.accounts.length} Holders</h1>
+	{:else if TOP_100_HOLDERS_ERROR_LET}
+		<p class="error">Error: {TOP_100_HOLDERS_ERROR_LET}</p>
+	{:else if TOP_100_HOLDERS_LET && tokenInfo}
+		<h1 class="th-title">Top {TOP_100_HOLDERS_LET.accounts.length} Holders</h1>
 		<div class="th-header-row">
 			<span class="th-col-account">ACCOUNT</span>
 			<span class="th-col-balance">BALANCE</span>
 		</div>
 		<ul class="th-list">
-			{#each info.accounts as holder}
+			{#each TOP_100_HOLDERS_LET.accounts as holder}
 				<li class="th-item">
 					<span class="th-account" title={holder.account_id}>{holder.account_id}</span>
 					<span class="th-balance">

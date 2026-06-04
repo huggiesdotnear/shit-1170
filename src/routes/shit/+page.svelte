@@ -12,24 +12,24 @@
 		console.log("================================");
 	});
 	let token = $derived($page.url.searchParams.get("token"));
-	let tokenInfo: FULL_TOKEN_INFO_RESPONSE | null = $state(null);
-	let loading = $state(false);
+	let FULL_TOKEN_INFO_RESPONSE_STATE_LET: FULL_TOKEN_INFO_RESPONSE | null = $state(null);
+	let FULL_TOKEN_INFO_LOADING_STATE_LET = $state(false);
 	// ================================
 	$effect(() => {
 		if (!token) {
-			tokenInfo = null;
+			FULL_TOKEN_INFO_RESPONSE_STATE_LET = null;
 			return;
 		}
-		loading = true;
+		FULL_TOKEN_INFO_LOADING_STATE_LET = true;
 		(async () => {
 			try {
-				tokenInfo = await full_token_info_fun(token);
-				console.log("======= full_token_info =======");
-				console.log($state.snapshot(tokenInfo));
+				FULL_TOKEN_INFO_RESPONSE_STATE_LET = await full_token_info_fun(token);
+				console.log("= FULL_TOKEN_INFO_RESPONSE_STATE_LET =");
+				console.log($state.snapshot(FULL_TOKEN_INFO_RESPONSE_STATE_LET));
 			} catch (e) {
 				console.error(e);
 			} finally {
-				loading = false;
+				FULL_TOKEN_INFO_LOADING_STATE_LET = false;
 			}
 		})();
 	});
@@ -43,10 +43,10 @@
 	<h3>{token}</h3>
 	<COMPONENT_INPUT_CA placeholder={token ?? ""} />
 	<br />
-	<COMPONENT_FT_FULL_TOKEN_INFO info={tokenInfo} {loading} />
+	<COMPONENT_FT_FULL_TOKEN_INFO info={FULL_TOKEN_INFO_RESPONSE_STATE_LET} loading={FULL_TOKEN_INFO_LOADING_STATE_LET} />
 	<br />
-	{#if tokenInfo}
-		<COMPONENT_FT_TOP_HOLDERS token={token ?? ""} {tokenInfo} />
+	{#if FULL_TOKEN_INFO_RESPONSE_STATE_LET}
+		<COMPONENT_FT_TOP_HOLDERS token={token ?? ""} tokenInfo={FULL_TOKEN_INFO_RESPONSE_STATE_LET} />
 	{/if}
 	<p>COPYRIGHT 2026 BY SLEET.NEAR</p>
 </main>
