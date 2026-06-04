@@ -41,12 +41,10 @@
 	{:else if error}
 		<p class="error">Error: {error}</p>
 	{:else if info}
-		<div class="ft-header">
-			{#if info.metadata.icon}
-				<img src={info.metadata.icon} alt="{info.metadata.name} icon" class="ft-icon" />
-			{/if}
-			<h1 class="ft-name">{info.metadata.name}</h1>
-		</div>
+		{#if info.metadata.icon}
+			<img src={info.metadata.icon} alt="{info.metadata.name} icon" class="ft-icon" />
+		{/if}
+		<h1 class="ft-name">{info.metadata.name}</h1>
 		<p class="ft-detail">SYMBOL: ${info.metadata.symbol}</p>
 		<p class="ft-detail">CA: {info.account_id}</p>
 		<p class="ft-detail">DECIMALS: {info.metadata.decimals}</p>
@@ -54,7 +52,7 @@
 		<p class="ft-detail">TOTAL SUPPLY: {info.total_supply}</p>
 		<p class="ft-detail">CIRCULATING SUPPLY: {info.circulating_supply}</p>
 		<p class="ft-detail">LIQUIDITY USD: {info.liquidity_usd}</p>
-		<p class="ft-detail">VOLUME 24H: {info.volume_usd_24h}</p>
+		<!-- <p class="ft-detail">VOLUME 24H: {info.volume_usd_24h}</p> -->
 	{/if}
 </div>
 
@@ -80,13 +78,6 @@
 			sans-serif;
 	}
 
-	.ft-header {
-		display: flex;
-		align-items: center;
-		gap: 12px;
-		margin-bottom: 16px;
-	}
-
 	.ft-icon {
 		width: 48px;
 		height: 48px;
@@ -104,6 +95,8 @@
 		margin: 8px 0;
 		font-size: 0.9rem;
 		color: #333;
+		word-wrap: break-word;
+		overflow-wrap: break-word;
 	}
 
 	.loading,
