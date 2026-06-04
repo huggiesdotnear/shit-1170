@@ -95,13 +95,13 @@
 	}
 	// ============================================
 	const TABS: Array<{ key: HOLDER_TYPE | "all"; label: string }> = [
-		{ key: "all", label: "All" },
-		{ key: "regular", label: `${HOLDER_EMOJI_WITH_REGULAR.regular} Regular` },
-		{ key: "dev", label: `${HOLDER_EMOJI.dev} Dev` },
-		{ key: "dex", label: `${HOLDER_EMOJI.dex} DEX` },
-		{ key: "vault", label: `${HOLDER_EMOJI.vault} Vault` },
-		{ key: "nft", label: `${HOLDER_EMOJI.nft} NFT` },
-		{ key: "burn", label: `${HOLDER_EMOJI.burn} Burn` }
+		{ key: "all", label: "🌐" },
+		{ key: "regular", label: HOLDER_EMOJI_WITH_REGULAR.regular },
+		{ key: "dev", label: HOLDER_EMOJI.dev },
+		{ key: "dex", label: HOLDER_EMOJI.dex },
+		{ key: "vault", label: HOLDER_EMOJI.vault },
+		{ key: "nft", label: HOLDER_EMOJI.nft },
+		{ key: "burn", label: HOLDER_EMOJI.burn }
 	];
 </script>
 
@@ -133,7 +133,7 @@
 			<div class="group-grid">
 				{#each Object.entries(get_group_totals() || {}) as [type, data]}
 					{@const pct = get_percentage(data.balance)}
-					<div class="group-item">
+					<div class="group-item" class:active-group={ACTIVE_TAB_LET === type}>
 						<span class="group-emoji">{HOLDER_EMOJI_WITH_REGULAR[type as HOLDER_TYPE]}</span>
 						<span class="group-label">{type.toUpperCase()}</span>
 						<span class="group-pct">{pct}</span>
@@ -141,6 +141,13 @@
 					</div>
 				{/each}
 			</div>
+			{#if get_group_totals()}
+				{@const totalPct = Object.values(get_group_totals()!).reduce((acc, g) => acc + parseFloat(get_percentage(g.balance)), 0).toFixed(2) + "%"}
+				<div class="total-row">
+					<span class="group-label">TOP 100</span>
+					<span class="group-pct">{totalPct}</span>
+				</div>
+			{/if}
 		</div>
 
 		<div class="holders-card">
@@ -209,27 +216,30 @@
 	}
 	.tabs {
 		display: flex;
-		flex-wrap: wrap;
-		gap: 8px;
 		margin-bottom: 20px;
-		justify-content: center;
+		background: #e0e0e0;
+		border-radius: 8px;
+		overflow: hidden;
 	}
 	.tab-btn {
-		padding: 8px 16px;
-		border: 1px solid #e0e0e0;
-		border-radius: 20px;
-		background: #fff;
+		flex: 1;
+		padding: 10px 8px;
+		border: none;
+		border-right: 1px solid #ccc;
+		background: #f5f5f5;
 		cursor: pointer;
-		font-size: 0.9rem;
-		transition: all 0.2s;
+		font-size: 1.2rem;
+		transition: background 0.2s;
+	}
+	.tab-btn:last-child {
+		border-right: none;
 	}
 	.tab-btn:hover {
-		background: #f5f5f5;
+		background: #e8e8e8;
 	}
 	.tab-btn.active {
 		background: #333;
 		color: #fff;
-		border-color: #333;
 	}
 	.group-totals {
 		margin-bottom: 20px;
@@ -255,6 +265,27 @@
 		border-radius: 6px;
 		font-size: 0.85rem;
 	}
+	.group-item.active-group {
+		background: #333;
+		color: #fff;
+	}
+	.group-item.active-group .group-label,
+	.group-item.active-group .group-pct,
+	.group-item.active-group .group-count {
+		color: #fff;
+	}
+	.total-row {
+		background: #333;
+		color: #fff;
+		grid-column: 1 / -1;
+		justify-content: center;
+		font-weight: 700;
+		margin-top: 4px;
+	}
+	.total-row .group-label,
+	.total-row .group-pct {
+		color: #fff;
+	}
 	.group-emoji {
 		font-size: 1.1rem;
 	}
@@ -265,6 +296,7 @@
 	.group-pct {
 		margin-left: auto;
 		font-weight: 700;
+		color: #333;
 	}
 	.group-count {
 		color: #999;
@@ -281,6 +313,7 @@
 		font-size: 1.1rem;
 		font-weight: 600;
 		margin: 0 0 16px 0;
+		color: #333;
 	}
 	.filtered-note {
 		font-weight: 400;
