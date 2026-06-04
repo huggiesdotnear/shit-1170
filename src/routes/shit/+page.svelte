@@ -24,6 +24,8 @@
 		(async () => {
 			try {
 				tokenInfo = await full_token_info_fun(token);
+				console.log("======= full_token_info =======")
+				console.log(tokenInfo)
 			} catch (e) {
 				console.error(e);
 			} finally {
