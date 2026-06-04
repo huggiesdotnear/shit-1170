@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { token_pools_fun } from "$lib/ts/token_pools_fun";
 	import { full_token_info_fun } from "$lib/ts/full_token_info_fun";
+	import { format_price_usd } from "$lib/ts/format_price_usd";
 	import type { FULL_TOKEN_INFO_RESPONSE } from "$lib/ts/full_token_info_fun";
 	import type { RHEA_POOL } from "$lib/ts/token_pools_fun";
 	// ============================================
@@ -24,6 +25,7 @@
 		pair_value_usd: number;
 		total_lp_value_usd: number;
 		token_percentage: number;
+		calculated_token_price: number;
 	}
 	// ============================================
 	let { token, tokenInfo }: PROPS = $props();
@@ -70,6 +72,8 @@
 					const total_lp_value_usd = token_value_usd + pair_value_usd;
 					const total_supply = parseFloat(tokenInfo.total_supply) / Math.pow(10, token_decimals);
 					const token_percentage = total_supply > 0 ? (token_amount_val / total_supply) * 100 : 0;
+					const calculated_token_price =
+						token_amount_val > 0 ? pair_value_usd / token_amount_val : 0;
 					pools_with_value.push({
 						pool,
 						pair_token,
@@ -79,7 +83,8 @@
 						token_value_usd,
 						pair_value_usd,
 						total_lp_value_usd,
-						token_percentage
+						token_percentage,
+						calculated_token_price
 					});
 				}
 				pools_with_value.sort((a, b) => b.total_lp_value_usd - a.total_lp_value_usd);
@@ -140,6 +145,10 @@
 						<div class="pool-stat">
 							<span class="stat-label">Total LP Value</span>
 							<span class="stat-value highlight">{format_value(item.total_lp_value_usd)}</span>
+						</div>
+						<div class="pool-stat">
+							<span class="stat-label">Calc. {token.split(".")[0]} Price</span>
+							<span class="stat-value">{format_price_usd(item.calculated_token_price.toString())}</span>
 						</div>
 						<div class="pool-tokens">
 							<div class="token-row">
