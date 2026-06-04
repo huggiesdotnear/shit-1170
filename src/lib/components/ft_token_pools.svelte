@@ -128,7 +128,7 @@
 	{:else if POOLS_ERROR_LET}
 		<p class="error">Error: {POOLS_ERROR_LET}</p>
 	{:else if POOLS_DATA_LET && POOLS_DATA_LET.length > 0}
-		<h1 class="pools-title">Pools ({POOLS_DATA_LET.length})</h1>
+		<h5 class="pools-title">POOLS ({POOLS_DATA_LET.length})</h5>
 		<div class="pools-grid">
 			{#each POOLS_DATA_LET as item}
 				<div class="pool-card">
@@ -147,7 +147,7 @@
 							<span class="stat-value highlight">{format_value(item.total_lp_value_usd)}</span>
 						</div>
 						<div class="pool-stat">
-							<span class="stat-label">Calc. {token.split(".")[0]} Price</span>
+							<span class="stat-label">Calc. {token} Price</span>
 							<span class="stat-value">{format_price_usd(item.calculated_token_price.toString())}</span>
 						</div>
 						<div class="pool-tokens">
@@ -188,12 +188,7 @@
 		text-align: left;
 	}
 
-	.pools-title {
-		font-size: 1.25rem;
-		font-weight: 600;
-		margin: 0 0 16px 0;
-		/*color: #333;*/
-	}
+
 
 	.pools-grid {
 		display: flex;

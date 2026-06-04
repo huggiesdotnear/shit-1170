@@ -55,8 +55,9 @@
 	<!-- {#if FULL_TOKEN_INFO_RESPONSE_STATE_LET} -->
 	<COMPONENT_FT_TOP_HOLDERS token={token ?? ""} tokenInfo={FULL_TOKEN_INFO_RESPONSE_STATE_LET} />
 	<!-- {/if} -->
+	<br/>
 	<!-- ================================ -->
-	<div><h5>POOLS</h5></div>
+	<!-- POOLS -->
 	<COMPONENT_FT_TOKEN_POOLS token={token ?? ""} tokenInfo={FULL_TOKEN_INFO_RESPONSE_STATE_LET} />
 	<!-- ================================ -->
 	<p>COPYRIGHT 2026 BY SLEET.NEAR</p>
