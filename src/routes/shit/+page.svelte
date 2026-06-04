@@ -6,14 +6,15 @@
 	import { full_token_info_fun } from "$lib/ts/full_token_info_fun";
 	import type { FULL_TOKEN_INFO_RESPONSE } from "$lib/ts/full_token_info_fun";
 	// ================================
+	let token = $derived($page.url.searchParams.get("token") ?? "shit-1170.meme-cooking.near");
+	let FULL_TOKEN_INFO_RESPONSE_STATE_LET: FULL_TOKEN_INFO_RESPONSE | null = $state(null);
+	let FULL_TOKEN_INFO_LOADING_STATE_LET = $state(false);
+	// ================================
 	$effect(() => {
 		console.log("================================");
 		console.log($page.url.searchParams.get("token"));
 		console.log("================================");
 	});
-	let token = $derived($page.url.searchParams.get("token"));
-	let FULL_TOKEN_INFO_RESPONSE_STATE_LET: FULL_TOKEN_INFO_RESPONSE | null = $state(null);
-	let FULL_TOKEN_INFO_LOADING_STATE_LET = $state(false);
 	// ================================
 	$effect(() => {
 		if (!token) {
@@ -42,16 +43,31 @@
 <main>
 	<h3>{token}</h3>
 	<COMPONENT_INPUT_CA placeholder={token ?? ""} />
-	<br />
-	<COMPONENT_FT_FULL_TOKEN_INFO info={FULL_TOKEN_INFO_RESPONSE_STATE_LET} loading={FULL_TOKEN_INFO_LOADING_STATE_LET} />
-	<br />
-	{#if FULL_TOKEN_INFO_RESPONSE_STATE_LET}
-		<COMPONENT_FT_TOP_HOLDERS token={token ?? ""} tokenInfo={FULL_TOKEN_INFO_RESPONSE_STATE_LET} />
-	{/if}
+	<!-- ================================ -->
+	<div><h5>METADATA</h5></div>
+	<COMPONENT_FT_FULL_TOKEN_INFO
+		info={FULL_TOKEN_INFO_RESPONSE_STATE_LET}
+		loading={FULL_TOKEN_INFO_LOADING_STATE_LET}
+	/>
+	<!-- ================================ -->
+	<div><h5>HOLDERS</h5></div>
+	<!-- {#if FULL_TOKEN_INFO_RESPONSE_STATE_LET} -->
+	<COMPONENT_FT_TOP_HOLDERS token={token ?? ""} tokenInfo={FULL_TOKEN_INFO_RESPONSE_STATE_LET} />
+	<!-- {/if} -->
+	<!-- ================================ -->
+	<!-- <div><h5>POOLS</h5></div> -->
+	<!-- ================================ -->
 	<p>COPYRIGHT 2026 BY SLEET.NEAR</p>
 </main>
 
 <!-- ================================ -->
 <!-- ================================ -->
 
-<style></style>
+<style>
+	h5 {
+		text-align: left;
+		width: 500px;
+		max-width: 90vw;
+		display: inline-block;
+	}
+</style>

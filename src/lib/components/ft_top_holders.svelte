@@ -93,7 +93,7 @@
 			{/each}
 		</ul>
 	{:else}
-		<p class="loading">Loading holders...</p>
+		<p class="loading">💩💩💩</p>
 	{/if}
 </div>
 
