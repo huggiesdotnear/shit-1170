@@ -130,7 +130,8 @@
 	{:else if POOLS_ERROR_LET}
 		<p class="error">Error: {POOLS_ERROR_LET}</p>
 	{:else if POOLS_DATA_LET && POOLS_DATA_LET.length > 0}
-		<h5 class="pools-title">POOLS ({POOLS_DATA_LET.length})</h5>
+		{@const total_token_pct = POOLS_DATA_LET.reduce((sum, p) => sum + p.token_percentage, 0)}
+		<h5 class="pools-title">POOLS ({POOLS_DATA_LET.length}) <span class="total-pct">({total_token_pct.toFixed(4)}% of supply)</span></h5>
 		<div class="pools-grid">
 			{#each POOLS_DATA_LET as item}
 				<div class="pool-card">
@@ -342,4 +343,5 @@
 	.error {
 		color: #d32f2f;
 	}
+
 </style>
