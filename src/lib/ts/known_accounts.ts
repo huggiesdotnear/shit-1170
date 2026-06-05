@@ -1,10 +1,10 @@
 // ============================================
 export const HOLDER_EMOJI = {
-  dev: "🧑‍💻",
-  dex: "🔄",
-  vault: "🏦",
-  nft: "🖼️",
-  burn: "🔥",
+	dev: "🧑‍💻",
+	dex: "🔄",
+	vault: "🏦",
+	nft: "🖼️",
+	burn: "🔥"
 } as const;
 export type HOLDER_TYPE = keyof typeof HOLDER_EMOJI;
 // ============================================

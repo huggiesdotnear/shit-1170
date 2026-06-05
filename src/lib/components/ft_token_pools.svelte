@@ -60,11 +60,9 @@
 					const token_supply_amount = pool.supplies[token] ?? "0";
 					const pair_supply_amount = pool.supplies[pair_token] ?? "0";
 					const token_decimals = tokenInfo.metadata.decimals;
-					const token_amount_val =
-						parseFloat(token_supply_amount) / Math.pow(10, token_decimals);
+					const token_amount_val = parseFloat(token_supply_amount) / Math.pow(10, token_decimals);
 					const pair_decimals = pair_info.decimals;
-					const pair_amount_val =
-						parseFloat(pair_supply_amount) / Math.pow(10, pair_decimals);
+					const pair_amount_val = parseFloat(pair_supply_amount) / Math.pow(10, pair_decimals);
 					const token_price = parseFloat(tokenInfo.price_usd);
 					const pair_price = parseFloat(pair_info.price_usd);
 					const token_value_usd = token_amount_val * token_price;
@@ -131,7 +129,10 @@
 		<p class="error">Error: {POOLS_ERROR_LET}</p>
 	{:else if POOLS_DATA_LET && POOLS_DATA_LET.length > 0}
 		{@const total_token_pct = POOLS_DATA_LET.reduce((sum, p) => sum + p.token_percentage, 0)}
-		<h5 class="pools-title">POOLS ({POOLS_DATA_LET.length}) <span class="total-pct">({total_token_pct.toFixed(4)}% of supply)</span></h5>
+		<h5 class="pools-title">
+			POOLS ({POOLS_DATA_LET.length})
+			<span class="total-pct">({total_token_pct.toFixed(4)}% of supply)</span>
+		</h5>
 		<div class="pools-grid">
 			{#each POOLS_DATA_LET as item}
 				<div class="pool-card">
@@ -151,17 +152,23 @@
 						</div>
 						<div class="pool-stat">
 							<span class="stat-label">Calc. {token} Price</span>
-							<span class="stat-value">{format_price_usd(item.calculated_token_price.toString())}</span>
+							<span class="stat-value"
+								>{format_price_usd(item.calculated_token_price.toString())}</span
+							>
 						</div>
 						<div class="pool-tokens">
 							<div class="token-row">
 								<span class="token-label" title={token}>{token}</span>
-								<span class="token-amt">{format_amount(item.token_amount, tokenInfo?.metadata.decimals ?? 24)}</span>
+								<span class="token-amt"
+									>{format_amount(item.token_amount, tokenInfo?.metadata.decimals ?? 24)}</span
+								>
 								<span class="token-val">{format_value(item.token_value_usd)}</span>
 							</div>
 							<div class="token-row">
 								<span class="token-label" title={item.pair_token}>{item.pair_token}</span>
-								<span class="token-amt">{format_amount(item.pair_amount, item.pair_info?.decimals ?? 24)}</span>
+								<span class="token-amt"
+									>{format_amount(item.pair_amount, item.pair_info?.decimals ?? 24)}</span
+								>
 								<span class="token-val">{format_value(item.pair_value_usd)}</span>
 							</div>
 						</div>
@@ -190,8 +197,6 @@
 		display: inline-block;
 		text-align: left;
 	}
-
-
 
 	.pools-grid {
 		display: flex;
@@ -343,5 +348,4 @@
 	.error {
 		color: #d32f2f;
 	}
-
 </style>

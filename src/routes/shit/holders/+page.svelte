@@ -86,9 +86,7 @@
 		};
 		for (const account of HOLDERS_DATA_LET.accounts) {
 			const type = get_holder_type(account.account_id);
-			groups[type].balance = (
-				BigInt(groups[type].balance) + BigInt(account.balance)
-			).toString();
+			groups[type].balance = (BigInt(groups[type].balance) + BigInt(account.balance)).toString();
 			groups[type].count++;
 		}
 		return groups;
@@ -108,7 +106,7 @@
 <!-- ================================ -->
 <!-- ================================ -->
 
-<main>
+<section>
 	<h1 class="page-title">SHIT HOLDERS</h1>
 
 	{#if LOADING_LET}
@@ -116,6 +114,24 @@
 	{:else if ERROR_LET}
 		<p class="error">Error: {ERROR_LET}</p>
 	{:else if HOLDERS_DATA_LET && TOKEN_INFO_LET}
+		<!-- ================================ -->
+		<!-- ================================ -->
+		<!-- GROUP HOLDINGS -->
+		<div class="group-totals">
+			<h2>GROUP HOLDINGS</h2>
+			<div class="group-grid">
+				{#each Object.entries(get_group_totals() || {}) as [type, data]}
+					{@const pct = get_percentage(data.balance)}
+					<div class="group-item" class:active-group={ACTIVE_TAB_LET === type}>
+						<span class="group-emoji">{HOLDER_EMOJI_WITH_REGULAR[type as HOLDER_TYPE]}</span>
+						<span class="group-pct">{pct}</span>
+						<span class="group-count">({data.count})</span>
+					</div>
+				{/each}
+			</div>
+		</div>
+		<!-- ================================ -->
+		<!-- TABS -->
 		<div class="tabs">
 			{#each TABS as tab}
 				<button
@@ -127,22 +143,8 @@
 				</button>
 			{/each}
 		</div>
-
-		<div class="group-totals">
-			<h2>GROUP HOLDINGS</h2>
-			<div class="group-grid">
-				{#each Object.entries(get_group_totals() || {}) as [type, data]}
-					{@const pct = get_percentage(data.balance)}
-					<div class="group-item" class:active-group={ACTIVE_TAB_LET === type}>
-						<span class="group-emoji">{HOLDER_EMOJI_WITH_REGULAR[type as HOLDER_TYPE]}</span>
-						<span class="group-label">{type.toUpperCase()}</span>
-						<span class="group-pct">{pct}</span>
-						<span class="group-count">({data.count})</span>
-					</div>
-				{/each}
-			</div>
-		</div>
-
+		<!-- ================================ -->
+		<!-- HOLDERS -->
 		<div class="holders-card">
 			<h2 class="holders-title">
 				TOP {HOLDERS_DATA_LET.accounts.length} HOLDERS
@@ -168,37 +170,33 @@
 						</span>
 						<span class="col-balance">
 							<span class="balance-token">{format_balance(holder.balance)}</span>
-							<span class="balance-usd">{get_usd_value(holder.balance, TOKEN_INFO_LET.price_usd)}</span>
+							<span class="balance-usd"
+								>{get_usd_value(holder.balance, TOKEN_INFO_LET.price_usd)}</span
+							>
 							<span class="balance-pct">{get_percentage(holder.balance)}</span>
 						</span>
 					</li>
 				{/each}
 			</ul>
 		</div>
+		<!-- ================================ -->
+		<!-- ================================ -->
 	{:else}
 		<p class="loading">💩💩💩</p>
 	{/if}
 	<!-- ================================ -->
 	<a href="/shit"><button>🔙 BACK</button></a>
 	<p>COPYRIGHT 2026 BY SLEET.NEAR</p>
-</main>
+</section>
 
 <!-- ================================ -->
 <!-- ================================ -->
 
 <style>
-	main {
-		padding: 0px;
-		width: 500px;
-		margin: 0 auto;
-		font-family: system-ui, -apple-system, sans-serif;
-		max-width: 90vw;
-		box-sizing: border-box;
-	}
 	.page-title {
 		font-size: 1.5rem;
 		font-weight: 700;
-		margin: 0 0 20px 0;
+		margin-top: 20px;
 		text-align: center;
 	}
 	.loading,
@@ -209,12 +207,16 @@
 	.error {
 		color: #d32f2f;
 	}
+	/*================================*/
 	.tabs {
 		display: flex;
 		margin-bottom: 20px;
 		background: #e0e0e0;
 		border-radius: 8px;
 		overflow: hidden;
+		width: 500px;
+		max-width: 90vw;
+		box-sizing: border-box;
 	}
 	.tab-btn {
 		flex: 1;
@@ -236,11 +238,15 @@
 		background: #333;
 		color: #fff;
 	}
-.group-totals {
+	/*================================*/
+	.group-totals {
 		padding: 16px;
 		background: #f8f8f8;
 		border-radius: 8px;
 		margin-bottom: 20px;
+		width: 500px;
+		max-width: 90vw;
+		box-sizing: border-box;
 	}
 	.group-item,
 	.holders-card {
@@ -254,11 +260,15 @@
 		border-radius: 6px;
 		font-size: 0.85rem;
 	}
+	/*================================*/
 	.holders-card {
 		border: 1px solid #e0e0e0;
 		border-radius: 8px;
 		padding: 20px;
 		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+		width: 500px;
+		max-width: 90vw;
+		box-sizing: border-box;
 	}
 	.group-totals h2 {
 		font-size: 1rem;
@@ -274,21 +284,12 @@
 		background: #333;
 		color: #fff;
 	}
-	.group-item.active-group .group-label,
 	.group-item.active-group .group-pct,
 	.group-item.active-group .group-count {
 		color: #fff;
 	}
 	.group-emoji {
 		font-size: 1.1rem;
-	}
-	.group-label {
-		font-weight: 600;
-		color: #666;
-		overflow: hidden;
-		text-overflow: ellipsis;
-		white-space: nowrap;
-		max-width: 70px;
 	}
 	.group-pct {
 		margin-left: auto;
